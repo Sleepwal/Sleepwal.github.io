@@ -1,33 +1,23 @@
-extends _partials/layout.pug
-include _mixin/card.pug
-include _mixin/postmeta.pug
-include _mixin/segment.pug
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
-block content
-    div(class="index wrap")
-        if page.current == 1
-            if page.sticky.length > 0
-                h2(class="divider")
-                    != __('index.sticky')
-                - var sticky = page.sticky.toArray()
-                div(class="segments sticky")
-                    each post in sticky
-                        +SMRender(post)
-            if page.catlist.length > 0
-                h2(class="divider")
-                    != __('index.category')
-                div(class="cards")
-                    each cat in page.catlist
-                        +CardRender(cat)
-        - var pagePosts = page?.posts?.length
-        if pagePosts > 0
-            - var posts = page.posts.toArray()
-            if page.current == 1
-                h2(class="divider")
-                    != __('index.posts')
-            div(class="segments posts")
-                each post in posts
-                    +SMRender(post)
-    include _partials/pagination.pug
+{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
 
+{% block page_class %}
+  {% if is_home() %}page-home{% endif -%}
+{% endblock %}
 
+{% block content %}
+  <section id="posts" class="posts-expand">
+    {% for post in page.posts %}
+      {{ post_template.render(post, true) }}
+    {% endfor %}
+  </section>
+
+  {% include '_partials/pagination.swig' %}
+{% endblock %}
+
+{% block sidebar %}
+  {{ sidebar_template.render(false) }}
+{% endblock %}
