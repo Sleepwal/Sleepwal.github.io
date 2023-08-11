@@ -11,13 +11,28 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Hexo</title>
+  <title>SleepBlog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
   <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
   
+  
+    <script>
+        var themeModelId = '1';
+        if (themeModelId) {
+            localStorage.setItem('modelId', themeModelId);
+        }
+    </script>
+    
+    <script defer src="https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js"></script>
+    <script>
+        var live2dOpen = eval('true') || false;
+        if (!live2dOpen) {
+            localStorage.setItem('waifu-display', 1609323474481);
+        }
+    </script>
   
   
   
@@ -80,10 +95,13 @@
   <!-- 页面预加载动画 -->
 
   
-    <div class="preloader_2" id="loader">
-  <div class="loader"></div>
+    <div class="preloader_4" id="loader">
+  <div class="loader-wrapper">
+    <div class="loader">
+      <div class="loader loader-inner"></div>
+    </div>
+  </div>
 </div>
-
   
 <script>
   var endLoading = function () {
@@ -198,7 +216,7 @@
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
       <img class="drawer-box-head_logo lazyload placeholder" src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
-      <h3 class="drawer-box-head_title">Hexo</h3>
+      <h3 class="drawer-box-head_title">SleepBlog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
     
@@ -256,6 +274,41 @@
                   
                   <span class="name">友情链接</span>
                 </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(5)">
+                  <span>
+                    
+                      <i class="fas fa-link"></i>
+                    
+                    <span class="name">更多</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(5)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(5)">
+                  
+                  <li>
+                    <a href="/about/">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>关于我</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a target="_blank" rel="noopener" href="http://bing.com">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>必应</span>
+                    </a>
+                  </li>
+                  
+                </ul>
               
             </li>
           
@@ -325,7 +378,7 @@
           <img src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
         </div>
       
-      <a href="/" class="logo">Hexo</a>
+      <a href="/" class="logo">SleepBlog</a>
     </div>
     <nav class="navbar">
       <ul class="menu">
@@ -381,6 +434,39 @@
                   
                   <span class="name">友情链接</span>
                 </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="javascript:;" class="menu-item-link" title="更多">
+                  
+                    <i class="fas fa-link"></i>
+                  
+                  <span class="name">更多</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/about/">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>关于我</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a target="_blank" rel="noopener" href="http://bing.com">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>必应</span>
+                    </a>
+                  </li>
+                  
+                </ul>
               
             </li>
           
@@ -529,17 +615,17 @@
               </div>
               <div class="flag-text">
                 <div class="flag-text-content">
-                  <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">青墨书晚风</div>
+                  <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">SleepWalker</div>
                   
-                      <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"></div>
+                    <div class="ani animated default-excerpt" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">
+                      <vue-typed-js :strings="defaultDesc" :loop="defaultDescTypedLoop" :type-speed="100" :back-speed="50">
+                        <h1 class="typing"></h1>
+                      </vue-typed-js>
+                    </div>
                     
                 </div>
                 <div style="display: flex;" class="flag-text-btns">
                   
-                    <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/" class="read-more swiper-btn-color" style="display: inline-block; z-index:1;">阅读文档</a></div>
-                  
-                  
-                    <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://gitee.com/yuang01/hexo-theme-bamboo/repository/archive/dev.zip" class="read-more swiper-btn-color2" style="display: inline-block; z-index:1;border: 1px solid white;">下载主题</a></div>
                   
                 </div>
               </div>
@@ -581,7 +667,7 @@
   var loop = JSON.parse('true') ? false : JSON.parse('true');
   var effect = 'slide';
   var swiperLength = parseInt(document.querySelector(".swiper-length").innerText);
-  var defaultDesc = '';
+  var defaultDesc = '人不是要他所认识的东西，而是认识他所要的东西。';
   defaultDesc = defaultDesc.split(',');
   var defaultDescTypedLoop = JSON.parse('true');
   var vm = new Vue({
@@ -1127,7 +1213,7 @@
       <h3 class="motto-title">座右铭</h3>
       <div class="motto-content">
         <p>
-          沉淀后我愿意做个温暖的人，有自己的喜好，有自己的原则，有自己的信仰，不急功近利，不浮夸轻薄。宠辱不惊，淡定安逸，心静如水，不忘初心，方得始终。——凌茜  
+          人生是在痛苦和无聊之间像钟摆一样的来回摆动着。 --《作为表象和意志的世界》  
         </p> 
       </div>
   </div>
@@ -1191,10 +1277,27 @@
         :data="listData"
         :class-option="classOption"
         class="warp"
-        style="height: 0px"
+        style="height: 30px"
       >
         <ul class="index-notice-content__ul">
           
+          
+            <li>
+              
+                <div class="index-notice-content__title">
+                  
+                    <a href="/archives" title="#我的博客上线了" style="color:red">
+                      #我的博客上线了
+                    </a>
+                  
+                </div>
+                
+                  <div class="index-notice-content__date" style="color:red">
+                    2023-08-10
+                  </div>
+                
+              
+            </li>
            
         </ul>
       </vue-seamless-scroll>
@@ -1209,7 +1312,7 @@
 <script>
   var seamless = JSON.parse('false');
   seamless = seamless ? 0 : 30;
-  var listData = '' || '';
+  var listData = '[object Object]' || '';
   listData = listData.split(',');
   var vm = new Vue({
     el: '#appIndexNotice',
@@ -1398,11 +1501,11 @@
           <h2>SleepWalker</h2>
         
         
-          <p>SW</p>
+          <p>Sleep</p>
 
         
         
-          <p><span id="jinrishici-sentence">Hexo</span></p>
+          <p><span id="jinrishici-sentence">SleepBlog</span></p>
           <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
@@ -1603,6 +1706,11 @@
 
 
       
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>1.3k 字</div>
+        </div>
+      
 
       
         <div class="webinfo-item">
@@ -1626,8 +1734,8 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Thu Aug 10 2023 18:02:04 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2023-08-10 日</div>
+            <div id="last-update" style="display: none;">Fri Aug 11 2023 20:09:01 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2023-08-11 日</div>
           
         </div>
         
@@ -1677,7 +1785,7 @@
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2023-08-10 日';
+            document.getElementById('last-update-show').innerHTML = '2023-08-11 日';
           }
         </script>
         
@@ -1874,7 +1982,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/yuang01">yuang01</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2023 - now <a target="_blank" rel="noopener" href="https://github.com/Sleepwal">SleepWalker</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
 
           </div>
         
@@ -2059,7 +2167,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
 
 <script>
-  var headerEl = 'h2, h3, h4',  //headers 
+  var headerEl = 'h1, h2, h3, h4',  //headers 
     content = '.post-detail',//文章容器
     idArr = {};  //标题数组以确定是否增加索引id
   //add #id
@@ -2079,7 +2187,7 @@
     fixedSidebarOffset: 'auto',
     activeLinkClass: 'is-active-link',
     orderedList: true,
-    collapseDepth: 20,
+    collapseDepth: 1,
     // onClick: function (e) {},
   }
   if ($('.toc').length > 0) {
@@ -2437,7 +2545,7 @@
       utterances.async = true;
       utterances.setAttribute('issue-term', 'pathname')
       utterances.setAttribute('theme', utteranceCommon.Theme)
-      utterances.setAttribute('repo', '')
+      utterances.setAttribute('repo', 'Sleepwal/Sleepwal.github.io')
       utterances.crossorigin = 'anonymous';
       utterances.src = 'https://utteranc.es/client.js';
       // content 是要插入评论的地方
