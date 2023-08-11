@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>hexo文章插入本地图片</title>
+      <link href="/2023/08/12/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/"/>
+      <url>/2023/08/12/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/</url>
+      
+        <content type="html"><![CDATA[<p>1.安装插件。</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure><p>2.再修改一下配置文件_config.yml，加入下面的配置。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><p>3.在“Blog-&gt;source”下新建”imags”文件夹。注意”imags”与”_posts”同级。</p><p>4.在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../../source/images//$&#123;filename&#125;</span><br></pre></td></tr></table></figure><p>5.在”格式-&gt;图像-&gt;设置图片根目录“将”Blog-&gt;source”设置为<a href="https://www.zhihu.com/search?q=%E6%A0%B9%E7%9B%AE%E5%BD%95&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1907420868%7D">根目录</a>。</p><p>详细原理：<a href="https://link.zhihu.com/?target=https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a> ，<a href="https://link.zhihu.com/?target=https://github.com/hexojs/hexo-renderer-marked">hexojs&#x2F;hexo-renderer-marked</a></p><p>参考</p><ul><li><a href="https://www.zhihu.com/question/419663130">(1 条消息) hexo文章中如何放入图片? - 知乎 (zhihu.com)</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo配置 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo本地图片 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>test</title>
       <link href="/2023/08/11/test/"/>
       <url>/2023/08/11/test/</url>
