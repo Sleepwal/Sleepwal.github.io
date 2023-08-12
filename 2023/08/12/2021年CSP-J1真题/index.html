@@ -630,11 +630,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.6k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.7k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 6分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 7分钟 |
           </span>
   
           
@@ -699,7 +699,33 @@
 <blockquote>
 <p>选D。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	 AA(&quot;出栈顺序</span><br><span class="line">      ---</span><br><span class="line">      	栈&quot;) --&gt; </span><br><span class="line">      A(&quot;</span><br><span class="line">      ---</span><br><span class="line">      	c</span><br><span class="line">        b</span><br><span class="line">        a&quot;) --&gt;|c出栈| B(&quot;c</span><br><span class="line">        ---</span><br><span class="line">        b</span><br><span class="line">        a&quot;) --&gt;|d入栈| C(&quot;c</span><br><span class="line">        ---</span><br><span class="line">        d</span><br><span class="line">        b</span><br><span class="line">        a&quot;) --&gt;|d出栈| D(&quot;c d</span><br><span class="line">        ---</span><br><span class="line">        b</span><br><span class="line">        a&quot;) --&gt; |a出栈| E(a不在栈顶,错误)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">	 AA(&quot;出栈顺序</span><br><span class="line">      ---</span><br><span class="line">      	栈&quot;) --&gt; </span><br><span class="line">      A(&quot;</span><br><span class="line">      ---</span><br><span class="line">      	c</span><br><span class="line">        b</span><br><span class="line">        a&quot;) --&gt;|c出栈| B(&quot;c</span><br><span class="line">        ---</span><br><span class="line">        b</span><br><span class="line">        a&quot;) --&gt;|d入栈| C(&quot;c</span><br><span class="line">        ---</span><br><span class="line">        d</span><br><span class="line">        b</span><br><span class="line">        a&quot;) --&gt;|d出栈| D(&quot;c d</span><br><span class="line">        ---</span><br><span class="line">        b</span><br><span class="line">        a&quot;) --&gt; |a出栈| E(a不在栈顶,错误)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<div class="mermaid">
+flowchart LR
+	 AA(&quot;出栈顺序
+      ---
+      	栈&quot;) --&gt; 
+      A(&quot;
+      ---
+      	c
+        b
+        a&quot;) --&gt;|c出栈| B(&quot;c
+        ---
+        b
+        a&quot;) --&gt;|d入栈| C(&quot;c
+        ---
+        d
+        b
+        a&quot;) --&gt;|d出栈| D(&quot;c d
+        ---
+        b
+        a&quot;) --&gt; |a出栈| E(a不在栈顶,错误)
+</div>
 
 
 
