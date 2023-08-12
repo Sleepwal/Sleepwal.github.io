@@ -1537,29 +1537,92 @@ D
 </style>
 
 
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
 
 
   <script>
+  // 判断是否存在mermaid元素
   function loadMermaid() {
     if (document.getElementsByClassName('mermaid').length) {
+      // 判断是否有mermaid.init()方法
       if (window.mermaidJsLoad) mermaid.init()
+      // 判断是否有loadScript方法
       else {
+        // 加载script标签
         loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          // 判断是否有mermaid.init()方法
           window.mermaidJsLoad = true
+          // 初始化mermaid
           mermaid.initialize({
             theme: 'default',
           })
+          // 判断是否有pjax.on属性
           if ('true') {
+            // 初始化mermaid
             mermaid.init();
           }
         })
       }
     }
   };
+  // 当DOMContentLoaded事件触发时，执行loadMermaid函数
   document.addEventListener("DOMContentLoaded", function () {
     loadMermaid();
   })
 
+  // 当pjax:complete事件触发时，执行loadMermaid函数
   document.addEventListener('pjax:complete', function () {
     loadMermaid();
   })

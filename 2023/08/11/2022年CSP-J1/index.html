@@ -1328,26 +1328,36 @@
 
 
   <script>
+  // 判断是否存在mermaid元素
   function loadMermaid() {
     if (document.getElementsByClassName('mermaid').length) {
+      // 判断是否有mermaid.init()方法
       if (window.mermaidJsLoad) mermaid.init()
+      // 判断是否有loadScript方法
       else {
+        // 加载script标签
         loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          // 判断是否有mermaid.init()方法
           window.mermaidJsLoad = true
+          // 初始化mermaid
           mermaid.initialize({
             theme: 'default',
           })
+          // 判断是否有pjax.on属性
           if ('true') {
+            // 初始化mermaid
             mermaid.init();
           }
         })
       }
     }
   };
+  // 当DOMContentLoaded事件触发时，执行loadMermaid函数
   document.addEventListener("DOMContentLoaded", function () {
     loadMermaid();
   })
 
+  // 当pjax:complete事件触发时，执行loadMermaid函数
   document.addEventListener('pjax:complete', function () {
     loadMermaid();
   })
