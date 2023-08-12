@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>17 动态规划入门 | SleepBlog</title>
+  <title>LaTeX常用公式 | SleepBlog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -598,21 +598,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg')">
+  background-position: center center;position: relative;background-image:url('https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        17 动态规划入门
+        LaTeX常用公式
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2023-08-10 |
+          <i class="fas fa-calendar"></i> 发表于：2023-08-12 |
         </span>
       
 
@@ -620,8 +620,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-detail-header_category">
-              数据结构与算法
+            <a href="/categories/LaTeX/" class="post-detail-header_category">
+              LaTeX
             </a>
           
         </span>
@@ -630,11 +630,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.2k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 202 |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 6分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
           </span>
   
           
@@ -661,127 +661,41 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <blockquote>
-<p>灵神【基础算法精讲】视频的个人笔记。</p>
-</blockquote>
-<p><strong>动态规划核心</strong></p>
-<ul>
-<li>状态<strong>定义</strong></li>
-<li>状态<strong>转移方程</strong></li>
-</ul>
-<p>启发思路（跟子集型回溯一样）</p>
-<ul>
-<li><strong>选和不选</strong></li>
-<li><strong>选哪个</strong></li>
-</ul>
-<p><img src="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811234201400.png" class="lazyload placeholder" data-srcset="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811234201400.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230811234201400"></p>
-<hr>
-<h1 id="视频例题"><a href="#视频例题" class="headerlink" title="视频例题"></a>视频例题</h1><h2 id="198-打家劫舍"><a href="#198-打家劫舍" class="headerlink" title="198.打家劫舍"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/house-robber/">198.打家劫舍</a></h2><p><img src="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811232947283.png" class="lazyload placeholder" data-srcset="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811232947283.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230811232947283"></p>
-<p>回溯三问：</p>
-<ol>
-<li>当前操作？枚举<strong>第 i 个</strong>房子选或不选。</li>
-<li>子问题？从<strong>前 i 个</strong>房子中的最高金额。</li>
-<li>下一个子问题？<ol>
-<li>选：从<strong>前 i-2 个</strong>房子中的最高金额。</li>
-<li>不选：从<strong>前 i-1 个</strong>房子中的最高金额。</li>
-</ol>
-</li>
-</ol>
-<p>递归</p>
-<ul>
-<li>会超时</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">rob</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">    function&lt;<span class="type">int</span>(<span class="type">int</span>)&gt; dfs = [&amp;](<span class="type">int</span> i) -&gt; <span class="type">int</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(i &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//不选和选, 前i-1和前i-2的最高金额, 取最大值</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(<span class="built_in">dfs</span>(i - <span class="number">1</span>), <span class="built_in">dfs</span>(i - <span class="number">2</span>) + nums[i]);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">dfs</span>(n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h2><p>_表示下标、^表示上标，但上下标内容不止一个字符时，需用大括号括起来。单引号’表示求导</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">a<span class="built_in">^</span>&#123;-1&#125;<span class="built_in">_</span>&#123;-2&#125; + b<span class="built_in">^</span>2<span class="built_in">_</span>1 = x&#x27; + x&#x27;&#x27;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
 
-<p>记忆化搜索</p>
+
+
+
+<p>$$<br>a^{-1}_{-2} + b^2_1 &#x3D; x’ + x’’<br>$$</p>
+<h2 id="分式"><a href="#分式" class="headerlink" title="分式"></a>分式</h2><p>\frac表示分式</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\frac</span>&#123;10&#125;&#123;20 + 3&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+<p>$$<br>\frac{10}{20 + 3}<br>$$</p>
+<h2 id="积分、极限、求和、乘积"><a href="#积分、极限、求和、乘积" class="headerlink" title="积分、极限、求和、乘积"></a>积分、极限、求和、乘积</h2><p>命令：\int表示积分，\infty无穷大，\lim表示极限， \sum表示求和，\prod表示乘积，^、_表示上、下限</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\int</span><span class="built_in">_</span>&#123;1&#125;<span class="built_in">^</span>&#123;10&#125; x<span class="keyword">\mathrm</span>&#123;d&#125;x </span><br><span class="line">+ <span class="keyword">\lim</span><span class="built_in">_</span>&#123;x <span class="keyword">\to</span> <span class="keyword">\infty</span>&#125;x<span class="built_in">^</span>&#123;10&#125; </span><br><span class="line">+ <span class="keyword">\sum</span><span class="built_in">_</span>&#123;n=1&#125;<span class="built_in">^</span>&#123;30&#125; </span><br><span class="line">+ <span class="keyword">\prod</span><span class="built_in">_</span>&#123;i=2&#125;<span class="built_in">^</span>&#123;30&#125;y<span class="built_in">_</span>i</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>$$<br>\int_{1}^{10} x\mathrm{d}x + \lim_{x \to \infty}x^{10} + \sum_{n&#x3D;1}^{30} + \prod_{i&#x3D;2}^{30}y_i<br>$$</p>
+<p>参考文章</p>
 <ul>
-<li>用数组 cache 记录 <strong>入参</strong>对应的函数<strong>返回值</strong></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/110756681">LaTeX 公式篇 - 知乎 (zhihu.com)</a></li>
 </ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">rob</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">cache</span><span class="params">(n, <span class="number">-1</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">        function&lt;<span class="type">int</span>(<span class="type">int</span>)&gt; dfs = [&amp;](<span class="type">int</span> i) -&gt; <span class="type">int</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; <span class="number">0</span>)  <span class="comment">//base case</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(cache[i] != <span class="number">-1</span>) <span class="keyword">return</span> cache[i];</span><br><span class="line"></span><br><span class="line">            <span class="comment">//不选和选, 前i-1和前i-2的最高金额, 取最大值</span></span><br><span class="line">            <span class="keyword">return</span> cache[i] = <span class="built_in">max</span>(<span class="built_in">dfs</span>(i - <span class="number">1</span>), <span class="built_in">dfs</span>(i - <span class="number">2</span>) + nums[i]);</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">dfs</span>(n - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>递推</p>
-<ul>
-<li>从记忆化搜索一比一翻译过来: <code>dp[i] = max(dp(i - 1), dp(i - 2) + nums[i]);</code></li>
-<li>防止越界, dp[i]中的 i 全部+2: <code>dp[i + 2] = max(dp[i + 1], dp[i] + nums[i]);</code></li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">rob</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(n + <span class="number">2</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="comment">//dp[i] = max(dp(i - 1), dp(i - 2) + nums[i])</span></span><br><span class="line">            <span class="comment">//防止越界, dp[i]中的i全部+2</span></span><br><span class="line">            dp[i + <span class="number">2</span>] = <span class="built_in">max</span>(dp[i + <span class="number">1</span>], dp[i] + nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[n + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>空间优化</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">rob</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> f0 = <span class="number">0</span>, f1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> x : nums) &#123;</span><br><span class="line">            <span class="type">int</span> new_f = <span class="built_in">max</span>(f1, f0 + x);</span><br><span class="line">            f0 = f1;</span><br><span class="line">            f1 = new_f;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> f1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="课后作业"><a href="#课后作业" class="headerlink" title="课后作业"></a>课后作业</h1><h2 id="70-爬楼梯"><a href="#70-爬楼梯" class="headerlink" title="70.爬楼梯"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/">70.爬楼梯</a></h2><p><img src="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811233037939.png" class="lazyload placeholder" data-srcset="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811233037939.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230811233037939"></p>
-<ul>
-<li>1 和 2 是边界，提前赋值。</li>
-<li>楼梯有 3 阶时，有两种方法：</li>
-<li><ul>
-<li><strong>从 1 阶</strong> 爬 1 个台阶，到达 3 阶</li>
-<li><strong>从 2 阶</strong> 爬 2 个台阶，到达 3 阶</li>
-<li><strong>到达 1 阶</strong>有 1 种方法，<strong>到达 2 阶</strong>有 2 种方法，到达 3 阶楼梯有 1+2&#x3D;3 种方法。</li>
-</ul>
-</li>
-<li>同理，楼梯有 i 阶</li>
-<li><ul>
-<li>从 i - 1 阶爬 1 个台阶</li>
-<li>从 i - 2 阶爬 2 个台阶</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">climbStairs</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(n + <span class="number">3</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>; dp[<span class="number">2</span>] = <span class="number">2</span>; <span class="comment">//边界</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">3</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="746-使用最小花费爬楼梯"><a href="#746-使用最小花费爬楼梯" class="headerlink" title="746.使用最小花费爬楼梯"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/min-cost-climbing-stairs/">746.使用最小花费爬楼梯</a></h2><p><img src="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811233225607.png" class="lazyload placeholder" data-srcset="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811233225607.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230811233225607"></p>
-<p>详细题解<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/min-cost-climbing-stairs/solutions/177077/yi-bu-yi-bu-tui-dao-dong-tai-gui-hua-de-duo-chong-/">力扣</a></p>
-<p>回溯三问：</p>
-<ol>
-<li>当前操作？枚举<strong>第 i 层</strong>从 <code>i - 1</code>层来 或 从 <code>i - 2</code>层来，然后加上<strong>第 i 层</strong>的花费。</li>
-<li>子问题？到达<strong>第 i 层</strong>台阶的最小花费。</li>
-<li>下一个子问题？<ol>
-<li>到达 <code>i - 1</code>层的最小花费</li>
-<li>到达 <code>i - 2</code>层的最小花费</li>
-</ol>
-</li>
-</ol>
-<p><strong>顶部</strong>是第 n 层，取 <code>n-1</code>和 <code>n-2</code>的最小值，<code>min(dp[n - 1], dp[n - 2])</code>。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minCostClimbingStairs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; cost)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = cost.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; ++i) &#123;</span><br><span class="line">            dp[i] = cost[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            dp[i] = <span class="built_in">min</span>(dp[i - <span class="number">1</span>], dp[i - <span class="number">2</span>]) + cost[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(dp[n - <span class="number">1</span>], dp[n - <span class="number">2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="2466-统计构造好字符串的方案数"><a href="#2466-统计构造好字符串的方案数" class="headerlink" title="2466.统计构造好字符串的方案数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-ways-to-build-good-strings/">2466.统计构造好字符串的方案数</a></h2><p><img src="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811233313270.png" class="lazyload placeholder" data-srcset="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811233313270.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230811233313270"></p>
-<p>记忆化搜索</p>
-<ul>
-<li><code>dfs</code>得出长度为 i 的好字符串的方案数</li>
-<li>循环, 求出长度从 <code>low</code>到 <code>high</code>的总方案数</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countGoodStrings</span><span class="params">(<span class="type">int</span> low, <span class="type">int</span> high, <span class="type">int</span> zero, <span class="type">int</span> one)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">cache</span><span class="params">(high + <span class="number">1</span>, <span class="number">-1</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">        function&lt;<span class="type">int</span>(<span class="type">int</span>)&gt; dfs = [&amp;] (<span class="type">int</span> i) -&gt; <span class="type">int</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(i == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(cache[i] != <span class="number">-1</span>) <span class="keyword">return</span> cache[i];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> cache[i] = (<span class="built_in">dfs</span>(i - zero) + <span class="built_in">dfs</span>(i - one)) % MOD;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = low; i &lt;= high; ++i) &#123;</span><br><span class="line">            ans += <span class="built_in">dfs</span>(i) % MOD;</span><br><span class="line">            ans %= MOD;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>递推</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countGoodStrings</span><span class="params">(<span class="type">int</span> low, <span class="type">int</span> high, <span class="type">int</span> zero, <span class="type">int</span> one)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(high + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= high; ++i) &#123;</span><br><span class="line">            <span class="comment">//dp[i] = dp[i - zero] + dp[i - one]; 会越界</span></span><br><span class="line">            <span class="keyword">if</span>(i &gt;= zero) dp[i] += dp[i - zero];</span><br><span class="line">            <span class="keyword">if</span>(i &gt;= one) dp[i] += dp[i - one];</span><br><span class="line">            dp[i] %= MOD;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = low; i &lt;= high; ++i) &#123; <span class="comment">//字符串长度为i的方案数</span></span><br><span class="line">            ans += dp[i] % MOD;</span><br><span class="line">            ans %= MOD;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="213-打家劫舍-II"><a href="#213-打家劫舍-II" class="headerlink" title="213.打家劫舍 II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/house-robber-ii/">213.打家劫舍 II</a></h2><p><img src="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811233333712.png" class="lazyload placeholder" data-srcset="/../images/17-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%85%A5%E9%97%A8/image-20230811233333712.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230811233333712"></p>
-<p>官方题解<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/house-robber-ii/solutions/722767/da-jia-jie-she-ii-by-leetcode-solution-bwja/">力扣</a></p>
-<p>跟例题打家劫舍的区别</p>
-<ul>
-<li><strong>第一间</strong>房子和<strong>最后一间</strong>房子不能同时偷</li>
-</ul>
-<p>用打家劫舍的解法，算两次</p>
-<ul>
-<li>第一次求 <code>0 ~ n-2</code></li>
-<li>第二次求 <code>1 ~ n-1</code></li>
-<li>最后求最大值</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">rob</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">        function&lt;<span class="type">int</span>(<span class="type">int</span>, <span class="type">int</span>)&gt; dpRange = [&amp;] (<span class="type">int</span> start, <span class="type">int</span> end) -&gt; <span class="type">int</span> &#123;</span><br><span class="line">            vector&lt;<span class="type">int</span>&gt; <span class="built_in">dp</span>(n + <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = start; i &lt;= end; ++i) &#123;</span><br><span class="line">                dp[i + <span class="number">2</span>] = <span class="built_in">max</span>(dp[i + <span class="number">1</span>], dp[i] + nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> dp[end + <span class="number">2</span>];</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//0 ~ n-2 和 1 ~ n-1 的最大值</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(<span class="built_in">dpRange</span>(<span class="number">0</span>, n - <span class="number">2</span>), <span class="built_in">dpRange</span>(<span class="number">1</span>, n - <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/%E7%AE%97%E6%B3%95/" class="">
-              算法
-            </a>
-          
-            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="">
-              动态规划
+            <a href="/tags/LaTeX%E5%85%AC%E5%BC%8F/" class="">
+              LaTeX公式
             </a>
           
         </div>
@@ -795,7 +709,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2023/08/10/17-动态规划入门/" target="_blank" title="17 动态规划入门">https://sleepwal.github.io/2023/08/10/17-动态规划入门/</a>
+    <a href="/2023/08/12/LaTeX常用公式/" target="_blank" title="LaTeX常用公式">https://sleepwal.github.io/2023/08/12/LaTeX常用公式/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -813,41 +727,25 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2023/08/11/2022%E5%B9%B4CSP-J1/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">2022 CSP-J1题目</div>
-      </div>
-      
-      <!-- <div class="content">
-        一、单项选择题选A。其他三个选项都有类。
-选C。选D。
- A. 将 x 的值赋为 101 B. 将 y 的值赋为 201
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/08/10/hello-world/" class="post-nav-link">
+    <a href="/2023/08/12/2021%E5%B9%B4CSP-J1%E7%9C%9F%E9%A2%98/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Hello World</div>
+        <div class="title-text">2021年CSP-J1真题</div>
       </div>
       <!-- <div class="content">
-        Welcome to Hexo! This is your very first post. Check documen
+        一、单向选择题第 1 题以下不属于面向对象程序设计语言的是（ ）。
+A. C++
+B. Python
+C. Java
+D
       </div> -->
     </a>
   </div>
@@ -1068,7 +966,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E4%BE%8B%E9%A2%98"><span class="toc-text">视频例题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#198-%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D"><span class="toc-text">198.打家劫舍</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BE%E5%90%8E%E4%BD%9C%E4%B8%9A"><span class="toc-text">课后作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#70-%E7%88%AC%E6%A5%BC%E6%A2%AF"><span class="toc-text">70.爬楼梯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#746-%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF"><span class="toc-text">746.使用最小花费爬楼梯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2466-%E7%BB%9F%E8%AE%A1%E6%9E%84%E9%80%A0%E5%A5%BD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B9%E6%A1%88%E6%95%B0"><span class="toc-text">2466.统计构造好字符串的方案数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#213-%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D-II"><span class="toc-text">213.打家劫舍 II</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="toc-text">上下标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%BC%8F"><span class="toc-text">分式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E3%80%81%E6%9E%81%E9%99%90%E3%80%81%E6%B1%82%E5%92%8C%E3%80%81%E4%B9%98%E7%A7%AF"><span class="toc-text">积分、极限、求和、乘积</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
