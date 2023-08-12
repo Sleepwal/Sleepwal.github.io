@@ -798,7 +798,9 @@
 </li>
 </ul>
 <p>网络分类</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">	通信网络 --&gt; 电路交换网络 --&gt; FDM &amp; TDM</span><br><span class="line">	通信网络 --&gt; 分组交换网络 --&gt; 虚电路网络 &amp; 数据包网络</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph TB
+    通信网络 --> 电路交换网络 --> FDM & TDM
+    通信网络 --> 分组交换网络 --> 虚电路网络 & 数据包网络</pre>
 
 
 
@@ -1919,14 +1921,14 @@ D
     <script src="/js/app.js"></script>
     
     <!-- 文章目录所需js -->
-<!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
-<script src="/js/tocbot/tocbot.min.js"></script> -->
-
+<link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script>
+<!-- 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
-
+ -->
 <script>
   var headerEl = 'h1, h2, h3, h4, h5',  //headers 
     content = '.post-detail',//文章容器
