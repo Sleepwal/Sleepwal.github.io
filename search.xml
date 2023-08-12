@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>2021年CSP-J1真题</title>
+      <link href="/2023/08/12/2021%E5%B9%B4CSP-J1%E7%9C%9F%E9%A2%98/"/>
+      <url>/2023/08/12/2021%E5%B9%B4CSP-J1%E7%9C%9F%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>1-什么是Internet</title>
       <link href="/2023/08/12/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/"/>
       <url>/2023/08/12/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/</url>
@@ -33,7 +46,7 @@
       <link href="/2023/08/12/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/"/>
       <url>/2023/08/12/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/</url>
       
-        <content type="html"><![CDATA[<p>1.安装插件。</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure><p>2.再修改一下配置文件_config.yml，加入下面的配置。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><p>3.在“Blog-&gt;source”下新建”imags”文件夹。注意”imags”与”_posts”同级。</p><p>4.在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../../source/images//$&#123;filename&#125;</span><br></pre></td></tr></table></figure><p>5.在”格式-&gt;图像-&gt;设置图片根目录“将”Blog-&gt;source”设置为<a href="https://www.zhihu.com/search?q=%E6%A0%B9%E7%9B%AE%E5%BD%95&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1907420868%7D">根目录</a>。</p><p>详细原理：<a href="https://link.zhihu.com/?target=https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a> ，<a href="https://link.zhihu.com/?target=https://github.com/hexojs/hexo-renderer-marked">hexojs&#x2F;hexo-renderer-marked</a></p><p>参考</p><ul><li><a href="https://www.zhihu.com/question/419663130">(1 条消息) hexo文章中如何放入图片? - 知乎 (zhihu.com)</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>安装插件</p><p>在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./$&#123;filename&#125;</span><br></pre></td></tr></table></figure><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>1.安装插件。</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure><p>2.再修改一下配置文件_config.yml，加入下面的配置。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><p>3.在“Blog-&gt;source”下新建”imags”文件夹。注意”imags”与”_posts”同级。</p><p>4.在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../../source/images//$&#123;filename&#125;</span><br></pre></td></tr></table></figure><p>5.在”格式-&gt;图像-&gt;设置图片根目录“将”Blog-&gt;source”设置为<a href="https://www.zhihu.com/search?q=%E6%A0%B9%E7%9B%AE%E5%BD%95&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1907420868%7D">根目录</a>。</p><p>详细原理：<a href="https://link.zhihu.com/?target=https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a> ，<a href="https://link.zhihu.com/?target=https://github.com/hexojs/hexo-renderer-marked">hexojs&#x2F;hexo-renderer-marked</a></p><hr><p>参考文章</p><ul><li><p><a href="https://moeci.com/posts/hexo-typora/">Hexo + Typora + 开发Hexo插件 解决图片路径不一致 | yiyun’s Blog (moeci.com)</a></p></li><li><p><a href="https://www.zhihu.com/question/419663130">(1 条消息) hexo文章中如何放入图片? - 知乎 (zhihu.com)</a></p></li></ul>]]></content>
       
       
       <categories>
