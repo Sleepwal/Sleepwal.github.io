@@ -830,7 +830,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
 .header-bg-color,
 .no-img-top,
 .no-swiper {
-  background: rgba(66,185,133,0.8);
+  background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
   transition: all 0.3s;
 }
 .header {
@@ -938,7 +938,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   padding: 15px 10px;
 }
 .header .header-content .navbar .menu .menu-item .sub-menu li {
-  background: rgba(66,185,133,0.8);
+  background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
   width: 140px;
   text-align: center;
   line-height: 1.2;
