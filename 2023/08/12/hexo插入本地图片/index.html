@@ -630,7 +630,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 220 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 417 |
           </span>
   
           <span class="min2read">
@@ -661,32 +661,68 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>安装插件</p>
-<p>在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p>
+        <h2 id="方法一：安装插件"><a href="#方法一：安装插件" class="headerlink" title="方法一：安装插件"></a>方法一：安装插件</h2><ol>
+<li>在Typora文件<code>–&gt;</code>设置偏好<code>--&gt;</code>图像<code>。在</code>插入图片时<code>选择复制到指定路径</code>，设置为</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./$&#123;filename&#125;</span><br></pre></td></tr></table></figure>
 
+<ol start="2">
+<li>安装插件</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>配置文件（可以不配置，Typora复制图片时就会创建目录）<ul>
+<li>在 Hexo 根目录打开配置文件 <code>_config.yml</code></li>
+<li>搜索 <code>post_asset_folder</code>，<code>false</code> 改为 <code>true</code></li>
+<li><code>hexo new page</code> 生成新文章，会在同级目录创建一个同名文件夹。</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>大概是从 <code>Hexo 5</code> 开始<a target="_blank" rel="noopener" href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a> 已无效。</p>
+</blockquote>
+<hr>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>官方提供的方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过这种方式，图片将会同时出现在文章和主页以及归档页中。</p>
+<blockquote>
+<p>但是这样不方便，Typora不能显示图片。</p>
+</blockquote>
+<hr>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a> 3.1.0 引入了一个新的选项，其允许你无需使用 <code>asset_img</code> 标签插件就可以在 markdown 中嵌入图片</p>
+<p>如需启用：修改一下配置文件_config.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 
 
-
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>1.安装插件。</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
-
-<p>2.再修改一下配置文件_config.yml，加入下面的配置。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>3.在“Blog-&gt;source”下新建”imags”文件夹。注意”imags”与”_posts”同级。</p>
-<p>4.在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p>
+<p>然后再配置一下Typora</p>
+<ol>
+<li><p>在Hexo根目录（<code>HexoBlog</code>）的<code>source</code>下新建<code>imags</code>文件夹。</p>
+<blockquote>
+<p>注意<code>imags</code>与<code>_posts</code><strong>同级</strong>。</p>
+</blockquote>
+<p><img src="/../images/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/image-20230813232133245.png" class="lazyload placeholder" data-srcset="/../images/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/image-20230813232133245.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230813232133245"></p>
+</li>
+<li><p>在Typora<code>文件</code> –&gt; <code>设置偏好</code> –&gt; <code>图像</code>。在<code>插入图片时</code>选择<code>复制到指定路径</code>，设置为</p>
+</li>
+</ol>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../../source/images//$&#123;filename&#125;</span><br></pre></td></tr></table></figure>
 
-<p>5.在”格式-&gt;图像-&gt;设置图片根目录“将”Blog-&gt;source”设置为<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%A0%B9%E7%9B%AE%E5%BD%95&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1907420868%7D">根目录</a>。</p>
-<p>详细原理：<a href="https://link.zhihu.com/?target=https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a> ，<a href="https://link.zhihu.com/?target=https://github.com/hexojs/hexo-renderer-marked">hexojs&#x2F;hexo-renderer-marked</a></p>
+<ol start="3">
+<li>在<code>格式</code> –&gt; <code>图像</code> –&gt; <code>设置图片根目录</code>将<code>HexoBlog/source</code>设置为<strong>根目录</strong>。（本人测试不设置根目录也行，根据自己情况来设置）</li>
+</ol>
 <hr>
 <p>参考文章</p>
 <ul>
 <li><p><a target="_blank" rel="noopener" href="https://moeci.com/posts/hexo-typora/">Hexo + Typora + 开发Hexo插件 解决图片路径不一致 | yiyun’s Blog (moeci.com)</a></p>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/419663130">(1 条消息) hexo文章中如何放入图片? - 知乎 (zhihu.com)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">资源文件夹 | Hexo</a></p>
+</li>
+<li><p>：<a href="https://link.zhihu.com/?target=https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a></p>
 </li>
 </ul>
 
@@ -697,6 +733,10 @@
           
             <a href="/tags/hexo%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/" class="">
               hexo本地图片
+            </a>
+          
+            <a href="/tags/Typora/" class="">
+              Typora
             </a>
           
         </div>
@@ -987,7 +1027,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="toc-text">方法二</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-text">方法一：安装插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="toc-text">方法二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89"><span class="toc-text">方法三</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
