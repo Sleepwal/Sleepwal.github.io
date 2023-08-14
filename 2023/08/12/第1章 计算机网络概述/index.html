@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>LaTeX常用公式 | SleepBlog</title>
+  <title>第1章 计算机网络概述 | SleepBlog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -598,14 +598,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        LaTeX常用公式
+        第1章 计算机网络概述
       </span>
     </div>
     
@@ -620,8 +620,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/LaTeX/" class="post-detail-header_category">
-              LaTeX
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-detail-header_category">
+              计算机网络
             </a>
           
         </span>
@@ -630,11 +630,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 317 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 3.7k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 13分钟 |
           </span>
   
           
@@ -661,36 +661,541 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>输入 <code>\\</code> ，用<code>&amp;</code> 可以对齐每行。<br>$$<br>A &#x3D; 10 + 1 \<br> &#x3D; 5 + 5 + 1 \<br>  &#x3D; 5 + 5 + 1 \<br>&amp; &#x3D; 5 + 5 + 1 \<br>&amp; &#x3D; 5 + 5 + 1 \<br>$$</p>
-<h2 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h2><p>_表示下标、^表示上标，但上下标内容不止一个字符时，需用大括号括起来。单引号’表示求导</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">a<span class="built_in">^</span>&#123;-1&#125;<span class="built_in">_</span>&#123;-2&#125; + b<span class="built_in">^</span>2<span class="built_in">_</span>1 = x&#x27; + x&#x27;&#x27;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>$$<br>a^{-1}_{-2} + b^2_1 &#x3D; x’ + x’’<br>$$</p>
-<h2 id="分式"><a href="#分式" class="headerlink" title="分式"></a>分式</h2><p>\frac表示分式</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\frac</span>&#123;10&#125;&#123;20 + 3&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>$$<br>\frac{10}{20 + 3}<br>$$</p>
-<h2 id="积分、极限、求和、乘积"><a href="#积分、极限、求和、乘积" class="headerlink" title="积分、极限、求和、乘积"></a>积分、极限、求和、乘积</h2><p>命令：\int表示积分，\infty无穷大，\lim表示极限， \sum表示求和，\prod表示乘积，^、_表示上、下限</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\int</span><span class="built_in">_</span>&#123;1&#125;<span class="built_in">^</span>&#123;10&#125; x<span class="keyword">\mathrm</span>&#123;d&#125;x </span><br><span class="line">+ <span class="keyword">\lim</span><span class="built_in">_</span>&#123;x <span class="keyword">\to</span> <span class="keyword">\infty</span>&#125;x<span class="built_in">^</span>&#123;10&#125; </span><br><span class="line">+ <span class="keyword">\sum</span><span class="built_in">_</span>&#123;n=1&#125;<span class="built_in">^</span>&#123;30&#125; </span><br><span class="line">+ <span class="keyword">\prod</span><span class="built_in">_</span>&#123;i=2&#125;<span class="built_in">^</span>&#123;30&#125;y<span class="built_in">_</span>i</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>$$<br>\int_{1}^{10} x\mathrm{d}x + \lim_{x \to \infty}x^{10} + \sum_{n&#x3D;1}^{30} + \prod_{i&#x3D;2}^{30}y_i<br>$$</p>
-<h2 id="向下、上取整"><a href="#向下、上取整" class="headerlink" title="向下、上取整"></a>向下、上取整</h2><p>命令：<code>\lfloor</code>表示左边下取整括号，<code> \rfloor</code>表示右边下取整括号，<code>\lceil</code>表示左边上取整括号，<code>\rceil</code>表示右边上取整括号。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$\lfloor x \rfloor$</span><br><span class="line">$\lceil x \rceil$</span><br></pre></td></tr></table></figure>
-
-<p>$\lfloor x \rfloor$</p>
-<p>$\lceil x \rceil$</p>
-<p>参考文章</p>
+        <h1 id="一、什么是Internet"><a href="#一、什么是Internet" class="headerlink" title="一、什么是Internet ?"></a>一、什么是Internet ?</h1><p>通俗点，就是一堆网络通过网络互联设备（路由器）连在一起。</p>
+<p>从具体构成角度看：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/110756681">LaTeX 公式篇 - 知乎 (zhihu.com)</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36825778/article/details/102584912">Latex——向下取整，向下取整_latex 向下取整_G5Lorenzo的博客-CSDN博客</a></li>
+<li>节点<ul>
+<li>主机及其上运行的应用程序</li>
+<li>路由器、交换机等网络交换设备</li>
+</ul>
+</li>
+<li>边：通信链路<ul>
+<li>接入网链路：主机连接到互联网的链 路</li>
+<li>主干链路：路由器间的链路</li>
+</ul>
+</li>
+<li>协议：控制发送、接收信息<ul>
+<li>如TCP、IP、HTTP、FTP、PPP</li>
+</ul>
+</li>
+<li>Internet：网络的网络<ul>
+<li>松散的层次结构，互连的ISP</li>
+</ul>
+</li>
+</ul>
+<p>从服务角度看：</p>
+<ul>
+<li>使用通信设施进行通信的<strong>分布式应用</strong><ul>
+<li>Web、VoIP、email、分布式游戏、电子商务、社交网络</li>
+</ul>
+</li>
+<li>通信基础设施为<strong>apps</strong>提供编程接口(通信服务）<ul>
+<li>将发送和接收数据的apps与互联网连接起来</li>
+<li>为app应用提供服务选择，类似于邮政服务：<ul>
+<li>无连接不可靠服务</li>
+<li>面向连接的可靠服务</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><p>每一层实现一个特定的功能，上一层借助于下一层提供的服务，通过跟对等层的协议实体，相互交换协议的报文，向上层提供更好的服务。</p>
+<p>例如：</p>
+<ul>
+<li>物理层把物理介质的<strong>01信号</strong>变成<strong>电磁波</strong>，发送和接收电磁波信号。</li>
+<li>链路层，相邻两点传输以<strong>帧</strong>为单位的数据，实现了了<strong>点到点</strong>的功能。</li>
+<li>网络层在链路层提供的点到点服务的基础上，实现了<strong>源主机</strong>到<strong>目标主机</strong>之间的数据传输，实现了<strong>端到端</strong>的功能。</li>
+<li>传输层加强和细分了网络层的服务，把<strong>主机</strong>之间的传输变成了<strong>进程</strong>之间的传输，解决了网络层<strong>传输不可靠</strong>的问题。</li>
+<li>应用层借助于传输层提供的服务，交换应用报文，实现各种各样的网络应用。</li>
+</ul>
+<hr>
+<h1 id="二、什么是协议？"><a href="#二、什么是协议？" class="headerlink" title="二、什么是协议？"></a>二、什么是协议？</h1><p>支撑互联网工作的<strong>标准</strong>。</p>
+<p>协议：对等层实体在通信过程中应该遵守的规则和集合。</p>
+<p>网络协议： </p>
+<ul>
+<li>类似人类协议</li>
+<li>机器之间的协议而非人与人之间的协议</li>
+<li>Internet 中所有的通信行为都受协议制约</li>
+</ul>
+<blockquote>
+<p>协议定义了在两个或多个通信实体之间交换的<strong>报文格式</strong>和<strong>次序</strong>，以及在报文传输和&#x2F;或接收或其他事件方面所采取的<strong>动作</strong></p>
+</blockquote>
+<hr>
+<h1 id="三、网络结构的三个部分"><a href="#三、网络结构的三个部分" class="headerlink" title="三、网络结构的三个部分"></a>三、网络结构的三个部分</h1><h2 id="网络边缘"><a href="#网络边缘" class="headerlink" title="网络边缘"></a>网络边缘</h2><ul>
+<li>主机</li>
+<li>应用程序（客户端和服务器）</li>
+</ul>
+<p>结构</p>
+<ul>
+<li>端系统(主机）：<ul>
+<li>运行应用程序</li>
+<li>如Web、email</li>
+<li>在“网络的边缘”</li>
+</ul>
+</li>
+<li>客户&#x2F;服务器模式（C&#x2F;S）<ul>
+<li>客户端向服务器请求、接收服务</li>
+<li>如Web浏览器&#x2F;服务器；email客户端&#x2F;服务器</li>
+</ul>
+</li>
+<li>对等（peer-peer）模式<ul>
+<li>很少(甚至没有）专门的服务器</li>
+<li>如 Gnutella、KaZaA、Emule</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="采用网络设施的面向连接服务"><a href="#采用网络设施的面向连接服务" class="headerlink" title="采用网络设施的面向连接服务"></a>采用网络设施的面向连接服务</h3><p>目标:在端系统之间传输数据</p>
+<ul>
+<li>握手：在数据传输之前做好准备<ul>
+<li>人类协议中：你好、你好</li>
+<li>两个通信主机之间为<strong>连接</strong>建立状态</li>
+</ul>
+</li>
+<li>TCP-传输控制协议(Transmission Control Protocol )<ul>
+<li>Internet上面向连接的服务</li>
+</ul>
+</li>
+</ul>
+<p>TCP 服务 RFC793</p>
+<ul>
+<li>可靠地、按顺序地传送数据<ul>
+<li>确认和重传</li>
+</ul>
+</li>
+<li>流量控制<ul>
+<li>发送方不会淹没接收方</li>
+</ul>
+</li>
+<li>拥塞控制<ul>
+<li>当网络拥塞时，发送方降低发送速率</li>
+</ul>
+</li>
+</ul>
+<h3 id="采用基础设施的无连接服务"><a href="#采用基础设施的无连接服务" class="headerlink" title="采用基础设施的无连接服务"></a>采用基础设施的无连接服务</h3><p>目标:在端系统之间传输数据</p>
+<ul>
+<li>无连接服务</li>
+<li>UDP-用户数据报协议(User Datagram Protocol)RFC 768:<ul>
+<li>无连接</li>
+<li>不可靠数据传输</li>
+<li>无流量控制</li>
+<li>无拥塞控制</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>使用TCP的应用：</p>
+<ul>
+<li>HTTP(Web),FTP(文件传送),Telnet(远程登录），SMTP (email)</li>
+</ul>
+<p>使用UDP的应用：</p>
+<ul>
+<li>流媒体、远程会议、DNS、Internet电话</li>
+</ul>
+<hr>
+<h2 id="网络核心"><a href="#网络核心" class="headerlink" title="网络核心"></a>网络核心</h2><ul>
+<li>网络核心：路由器的网状网络</li>
+<li>基本问题：数据怎样通过网络进行输？<ul>
+<li><strong>电路交换</strong>：为每个呼叫预留一条专有电路：如电话网</li>
+<li><strong>分组交换</strong>：<ul>
+<li>将要传送的数据分成一个个单位：分组</li>
+<li>将分组从一个路由器传到相邻路由器(<strong>hop</strong>），一段段最终从源端传到目标端</li>
+<li>每段：采用链路的最大传输能力(带宽）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>网络分类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">	通信网络 --&gt; 电路交换网络 --&gt; FDM &amp; TDM</span><br><span class="line">	通信网络 --&gt; 分组交换网络 --&gt; 虚电路网络 &amp; 数据包网络</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h3><p> 端到端的资源被分配给从源端到目标端的呼叫 “call”：</p>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230812112859334.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230812112859334.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230812112859334"></p>
+<ul>
+<li><p>图中，每段链路有4条线路： </p>
+<ul>
+<li>该呼叫采用了上面链路的第2个线路，右边链路的第1个线路（piece）</li>
+</ul>
+</li>
+<li><p>独享资源：不同享</p>
+<ul>
+<li>每个呼叫一旦建立起来就能够保证性能</li>
+</ul>
+</li>
+<li><p>如果呼叫没有数据发送，被分配的资源就会被浪费 (no sharing)</p>
+</li>
+<li><p>通常被传统电话网络采用</p>
+</li>
+</ul>
+<p>为呼叫预留端-端资源</p>
+<ul>
+<li>链路带宽、交换能力</li>
+<li>专用资源：不共享</li>
+<li>保证性能</li>
+<li>要求建立呼叫连接</li>
+</ul>
+<p>网络资源（如带宽）被分成片</p>
+<ul>
+<li>为呼叫分配<strong>片</strong></li>
+<li>如果某个呼叫没有数据，则其资源片处于<strong>空闲状态</strong>（不共享）</li>
+<li>将带宽分成片<ul>
+<li>频分(Frequencydivision multiplexing) </li>
+<li>时分(Time-division multiplexing) </li>
+<li>波分(Wave-divis）</li>
+<li>码分(CDM)</li>
+</ul>
+</li>
+</ul>
+<p>计算举例</p>
+<ul>
+<li>在一个电路交换网络上，从主机A到主机B发送一个640,000比特的文件需要多长时间？ <ul>
+<li>所有的链路速率为1.536 Mbps </li>
+<li>每条链路使用时隙数为24的TDM</li>
+<li>建立端-端的电路需500 ms</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">每条链路的速率（一个时间片）：1.536Mbps/24 = 64kbps</span><br><span class="line">传输时间：640kb/64kps = 10s</span><br><span class="line">共用时间：传输时间+建立链路时间=10s + 500ms = 10.5s</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h3><p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230812114957016.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230812114957016.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230812114957016"></p>
+<p>以<strong>分组</strong>为单位存储-转发方式</p>
+<ul>
+<li>网络带宽资源不再分分为一个个片，传输时使用全部带宽</li>
+<li>主机之间传输的数据被分为一个个分组</li>
+</ul>
+<p><strong>资源共享</strong>，按需使用：</p>
+<ul>
+<li>存储-转发：分组每次移动一跳（ hop ） </li>
+<li>在转发之前，节点必须收到整个分组 <ul>
+<li>延迟比线路交换要大 </li>
+<li>排队时间</li>
+</ul>
+</li>
+</ul>
+<p>存储-转发</p>
+<ul>
+<li>被传输到下一个链路之前，整个分组必须到达路由器：<strong>存储-转发</strong></li>
+<li>在一个速率为R bps的链路，一个长度为L bits 的分组的存储转发延时： L&#x2F;R s</li>
+</ul>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230812121522155.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230812121522155.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230812121522155"></p>
+<p>排队和延迟： </p>
+<ul>
+<li>如果到达速率 &gt; 链路的输出速率: <ul>
+<li>分组将会排队，等待传输 </li>
+<li>如果路由器的缓存用完了，分组将会被抛弃</li>
+</ul>
+</li>
+</ul>
+<p>关键功能</p>
+<ul>
+<li><strong>路由</strong>: 决定分组采用的源到 目标的路径 <ul>
+<li>路由算法</li>
+</ul>
+</li>
+<li><strong>转发</strong>: 将分组从路由器的输 入链路转移到输出链路</li>
+</ul>
+<p>统计多路复用</p>
+<h3 id="分组交换-vs-电路交换"><a href="#分组交换-vs-电路交换" class="headerlink" title="分组交换 vs. 电路交换"></a>分组交换 vs. 电路交换</h3><p>同样的网络资源，分组交换允许更多用户使用网络！</p>
+<p>1 Mb&#x2F;s 链路，每个用户活动时100 kb&#x2F;s，只有10% 的时间是活动的。 </p>
+<ul>
+<li>电路交换： 最多10 用户。$ \dfrac{1Mb&#x2F;s}{100kb&#x2F;s} $</li>
+</ul>
+<p>$$<br>每个用户分配100kb&#x2F;s，最多有\dfrac{1Mb&#x2F;s}{100kb&#x2F;s} &#x3D; 10 个用户<br>$$</p>
+<ul>
+<li>分组交换：</li>
+</ul>
+<p>$$<br>35 用户时 ，&gt;&#x3D;10个用户活动的概率为 1 - \sum_{n&#x3D;0}^{9} C^{35}_n P^n(1-P)^{35-n} &#x3D; 0.0004<br>$$</p>
+<p>分组交换是“突发数据的胜利者？”</p>
+<ul>
+<li><p>适合于对突发式数据传输 </p>
+<ul>
+<li><p>资源共享 </p>
+</li>
+<li><p>简单，不必建立呼叫</p>
+</li>
+</ul>
+</li>
+<li><p>过度使用会造成网络拥塞：分组延时和丢失 </p>
+<ul>
+<li>对可靠地数据传输需要协议来约束：拥塞控制</li>
+</ul>
+</li>
+<li><p>Q: 怎样提供类似电路交换的服务？ </p>
+<ul>
+<li>保证音频&#x2F;视频应用需要的带宽 </li>
+<li>一个仍未解决的问题(chapter 7)</li>
+</ul>
+</li>
+</ul>
+<p>分组交换网络：存储-转发</p>
+<p> 分组交换: 分组的存储转发一段一段从源端传到目标端 ，按照有无网络层的连接，分成： </p>
+<ol>
+<li><p><strong>数据报</strong>网络： (datagram)</p>
+<ul>
+<li>分组的目标地址决定下一跳 </li>
+<li>在不同的阶段，路由可以改变 </li>
+<li>类似：送快递、寄信（有目标地址，路由就是快递站、邮局）</li>
+<li>工作原理<ul>
+<li>在通信之前,无须建立起一个连接,有数据就传输 </li>
+<li>每一个分组都独立路由(路径不一样,可能会失序) </li>
+<li>路由器根据分组的目标地址进行路由</li>
+</ul>
+</li>
+</ul>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230812211759473.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230812211759473.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="数据包网络"></p>
+</li>
+<li><p><strong>虚电路</strong>网络： (virtual circuit)</p>
+<ul>
+<li>每个分组都带标签（虚电路标识 VC ID），标签决定下一跳 </li>
+<li>在<strong>呼叫建立</strong>时决定路径，在整个呼叫中路径保持不变 </li>
+<li>路由器维持<strong>每个呼叫的状态信息</strong> </li>
+<li>类似：打电话（建立连接后，通信）</li>
+<li>X.25 和ATM</li>
+</ul>
+</li>
+</ol>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230812212123051.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230812212123051.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="虚电路"></p>
+<p>虚电路是<strong>有连接</strong>的，连接<strong>不仅</strong>体现在源主机和目标主机上，还体现在<strong>中间经过的所有节点</strong>上。</p>
+<p>TCP是<strong>面向连接</strong>，连接<strong>仅</strong>体现在<strong>源主机和目标主机上</strong>，中间的路由器<strong>不维护</strong>通信状态。</p>
+<hr>
+<h2 id="接入网、物理媒体"><a href="#接入网、物理媒体" class="headerlink" title="接入网、物理媒体"></a>接入网、物理媒体</h2><ul>
+<li>有线或无线通信链路</li>
+</ul>
+<h3 id="接入网"><a href="#接入网" class="headerlink" title="接入网"></a>接入网</h3><p>住宅接入：modem</p>
+<ul>
+<li>将上网数据<strong>调制</strong>加载音频信号上，在电话线上传输，在局端将其中的数据<strong>解调</strong>出来；反之亦然 <ul>
+<li>调频 </li>
+<li>调幅 </li>
+<li>调相位 </li>
+<li>综合调制</li>
+</ul>
+</li>
+<li>拨号<strong>调制解调器</strong> <ul>
+<li><strong>56Kbps</strong> 的速率直接接入路由器(通常更低) </li>
+<li>不能同时上网和打电话：不能总是在线</li>
+</ul>
+</li>
+</ul>
+<p>接入网: digital subscriber line (DSL) </p>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814110144217.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814110144217.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="接入网"></p>
+<ul>
+<li>采用<strong>现存的</strong>到交换局DSLAM的电话线 <ul>
+<li>DSL线路上的数据被传到互联网 </li>
+<li>DSL线路上的语音被传到电话网</li>
+</ul>
+</li>
+<li>&lt; 2.5 Mbps上行传输速率(typically &lt; 1 Mbps) </li>
+<li>&lt; 24 Mbps下行传输速率(typically &lt; 10 Mbps)</li>
+<li>特点<ul>
+<li>打电话时，可以上网</li>
+<li>上行和下行带宽<strong>独享</strong></li>
+</ul>
+</li>
+</ul>
+<p>线缆网络</p>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814111009767.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814111009767.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230814111009767"></p>
+<ul>
+<li><p>有线电视信号线缆双向改造 </p>
+</li>
+<li><p>FDM: 在不同频段传输不同信道的数据， 数字电视和上网数据（上下行）</p>
+</li>
+<li><p>HFC: hybrid fiber coax </p>
+<ul>
+<li>非对称: 最高30Mbps的下行传输速率, 2 Mbps 上行传输 速率</li>
+</ul>
+</li>
+<li><p>线缆和光纤网络将个家庭用户接入到 ISP 路由器 </p>
+</li>
+<li><p>各用户<strong>共享</strong>到线缆头端的接入网络 </p>
+<ul>
+<li>与DSL不同, DSL每个用户一个专用线路到CO（central  office）、</li>
+</ul>
+</li>
+<li><p>特点</p>
+<ul>
+<li>上行带宽<strong>共享</strong></li>
+</ul>
+</li>
+</ul>
+<p>电缆模式</p>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814111805679.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814111805679.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230814111805679"></p>
+<p>家庭网络</p>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814112016161.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814112016161.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230814112016161"></p>
+<p>企业接入网络(Ethernet)</p>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814112305955.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814112305955.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230814112305955"></p>
+<ul>
+<li>经常被企业或者大学等机构采用 <ul>
+<li>10 Mbps, 100Mbps, 1Gbps, 10Gbps传输率 </li>
+<li>现在，端系统经常直接接到以太网络交换机上</li>
+</ul>
+</li>
+</ul>
+<p>无线接入网络</p>
+<ul>
+<li>各无线端系统共享无线接入网络（端系统到无线路由器） <ul>
+<li>通过基站或者叫接入点</li>
+</ul>
+</li>
+</ul>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814112718387.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814112718387.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230814112718387"></p>
+<h3 id="物理媒体"><a href="#物理媒体" class="headerlink" title="物理媒体"></a>物理媒体</h3><ul>
+<li><strong>Bit</strong>: 在发送-接收对间传播 </li>
+<li>物理链路：连接每个发送-接 收对之间的物理媒体 </li>
+<li>导引型媒体: <ul>
+<li>信号沿着固体媒介被导引：同轴电缆、光纤、 双绞线</li>
+</ul>
+</li>
+<li>非导引型媒体： <ul>
+<li>开放的空间传输电磁波或者光信号，在电磁或者光信号中承 载数字数据</li>
+</ul>
+</li>
+</ul>
+<p>双绞线 (TP) </p>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814114355509.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814114355509.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230814114355509"></p>
+<ul>
+<li>两根绝缘铜导线拧合 <ul>
+<li>5类：100Mbps 以太网 ，Gbps 千兆位以太网 </li>
+<li>6类：10Gbps万兆以太网</li>
+</ul>
+</li>
+</ul>
+<p>同轴电缆： </p>
+<p><img src="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814115317990.png" class="lazyload placeholder" data-srcset="/../images/1-%E4%BB%80%E4%B9%88%E6%98%AFInternet/image-20230814115317990.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230814115317990"></p>
+<ul>
+<li>两根同轴的铜导线 </li>
+<li>双向 </li>
+<li>基带电缆： <ul>
+<li>电缆上一个单个信道 </li>
+<li>Ethernet</li>
+</ul>
+</li>
+<li>宽带电缆： <ul>
+<li>电缆上有多个信道 </li>
+<li>HFC</li>
+</ul>
+</li>
+</ul>
+<p>光纤和光缆： </p>
+<ul>
+<li>光脉冲，每个脉冲表示一个 bit，在玻璃纤维中传输 </li>
+<li>高速： <ul>
+<li>点到点的高速传输（如10  Gps-100Gbps传输速率 ）</li>
+</ul>
+</li>
+<li>低误码率：在两个中继器之 间可以有很长的距离，不受 电磁噪声的干扰 </li>
+<li>安全</li>
+</ul>
+<p>无线链路</p>
+<p>开放空间传输电磁波，携带要传输的数据 </p>
+<ul>
+<li>无需物理“线缆” </li>
+<li>双向 </li>
+<li>传播环境效应： <ul>
+<li>反射 </li>
+<li>吸收 </li>
+<li>干扰</li>
+</ul>
+</li>
+</ul>
+<p>无线链路类型: </p>
+<ul>
+<li>地面微波  e.g. up to 45 Mbps channels </li>
+<li>LAN (e.g., WiFi) <ul>
+<li>11Mbps, 54 Mbps,540Mbps…</li>
+</ul>
+</li>
+<li>wide-area (e.g., 蜂窝) <ul>
+<li>3G cellular: ~ 几Mbps </li>
+<li>4G 10Mbps </li>
+<li>5G 数Gbps</li>
+</ul>
+</li>
+<li>卫星<ul>
+<li>每个信道Kbps 到45Mbps (或者 多个聚集信道) </li>
+<li>270 msec端到端延迟 </li>
+<li>同步静止卫星和低轨卫星</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="四、Internet-ISP结构"><a href="#四、Internet-ISP结构" class="headerlink" title="四、Internet&#x2F;ISP结构"></a>四、Internet&#x2F;ISP结构</h1><p>互联网络结构：网络的网络 </p>
+<ul>
+<li>端系统通过<strong>接入ISPs</strong> (Internet Service Providers)连接到互联网 <ul>
+<li>住宅，公司和大学的ISPs</li>
+</ul>
+</li>
+<li>接入ISPs相应的必须是互联的 <ul>
+<li>因此任何2个端系统可相互发送分组到对方</li>
+</ul>
+</li>
+<li>导致的“网络的网络”非常复杂 <ul>
+<li>发展和演化是通过<strong>经济的</strong>和<strong>国家的</strong>政策来驱动的</li>
+</ul>
+</li>
+</ul>
+<p>![image-20230814161522462](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230814161522462.png)</p>
+<p>在网络的最中心，一些为数不多的充分连接的大范围网络（分布广、节点有限、 但是之间有着多重连接） </p>
+<ul>
+<li>“tier-1” commercial ISPs (e.g., Level 3, Sprint, AT&amp;T, NTT), 国家或者国际范围的覆盖 </li>
+<li>content provider network (e.g., Google): 将它们的数据中心接入ISP，方便周边用户的访问；通常私有网络之间用专网绕过第一层ISP和区域ISPs</li>
+</ul>
+<h2 id="三层-ISP"><a href="#三层-ISP" class="headerlink" title="三层 ISP"></a>三层 ISP</h2><ul>
+<li><p><strong>中心：第一层ISP</strong>（如UUNet, BBN&#x2F;Genuity, Sprint,  AT&amp;T）<strong>国家&#x2F;国际覆盖</strong>，带宽很宽，速率极高 </p>
+<ul>
+<li><p>直接与其他第一层ISP相连，通过<code>peer</code>或<code>IXP</code>连接</p>
+</li>
+<li><p>与大量的第二层ISP和其他客户网络相连</p>
+</li>
+<li><p>松散的层次模型</p>
+<p>![第一层ISP](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230814162008198.png)</p>
+</li>
+</ul>
+</li>
+<li><p><strong>第二层ISP</strong>: 更小些的 (通常是<strong>区域性</strong>的) ISP </p>
+<ul>
+<li><p>接入一个或多个第一层ISPs，也可能接入其他第二层ISP</p>
+<p>![第二层ISP](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230814162354306.png)</p>
+</li>
+</ul>
+</li>
+<li><p><strong>第三层ISP</strong>与其他本地ISP </p>
+<ul>
+<li><p>接入网 (与端系统最近)</p>
+<p>![第三层ISP](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230814162519920.png)</p>
+</li>
+</ul>
+<p>端系统：一个分组要经过许多网络！</p>
+<p>![image-20230814162801285](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230814162801285.png)</p>
+</li>
+<li><p>很多内容提供商(如：Google, Akamai )可能会部署自己的网络,连接自己的在各地的DC（数据中心），走自己的数据 </p>
+</li>
+<li><p>连接若干local ISP和各级（包括一层）ISP,更加靠近用户</p>
+</li>
+</ul>
+<h2 id="ISP之间的连接"><a href="#ISP之间的连接" class="headerlink" title="ISP之间的连接"></a>ISP之间的连接</h2><ul>
+<li>POP: 高层ISP面向客户网络的接入点，涉及费用结算 <ul>
+<li>如一个低层ISP接入多个高层ISP，多宿（multi home）</li>
+</ul>
+</li>
+<li>对等接入：2个ISP对等互接，不涉及费用结算 </li>
+<li>IXP：多个对等ISP互联互通之处，通常不涉及费用结算 <ul>
+<li>对等接入</li>
+</ul>
+</li>
+<li>ICP自己部署专用网络，同时和各级ISP连接</li>
+</ul>
+<hr>
+<h1 id="五、性能"><a href="#五、性能" class="headerlink" title="五、性能"></a>五、性能</h1><p>丢包、延时、吞吐量</p>
+<hr>
+<p>协议层次、服务模型<br>历史</p>
+<hr>
+<p>对应视频</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JV411t7ow?p=5&vd_source=49e30194f6d5798a1f90d69dad9c0460">1.3 网络核心_哔哩哔哩_bilibili</a></li>
 </ul>
 
       </div>
@@ -698,8 +1203,8 @@
         
         <div class="tags">
           
-            <a href="/tags/LaTeX%E5%85%AC%E5%BC%8F/" class="">
-              LaTeX公式
+            <a href="/tags/%E8%AE%A1%E7%BD%91%E6%A6%82%E8%BF%B0/" class="">
+              计网概述
             </a>
           
         </div>
@@ -713,7 +1218,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2023/08/12/LaTeX常用公式/" target="_blank" title="LaTeX常用公式">https://sleepwal.github.io/2023/08/12/LaTeX常用公式/</a>
+    <a href="/2023/08/12/第1章 计算机网络概述/" target="_blank" title="第1章 计算机网络概述">https://sleepwal.github.io/2023/08/12/第1章 计算机网络概述/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -735,21 +1240,20 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2023/08/14/2020CSP-J1%E7%9C%9F%E9%A2%98/" class="post-nav-link">
+    <a href="/2023/08/12/2021%E5%B9%B4CSP-J1%E7%9C%9F%E9%A2%98/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">2020CSP-J1真题</div>
+        <div class="title-text">2021年CSP-J1真题</div>
       </div>
       
       <!-- <div class="content">
-        
-In Process
-
-一、单向选择题第 1 题
-在内存储器中每个存储单元都被赋予一个唯一的序号，称为（）。
-A. 地
+        一、单向选择题第 1 题以下不属于面向对象程序设计语言的是（ ）。
+A. C++
+B. Python
+C. Java
+D
       </div> -->
     </a>
   </div>
@@ -760,19 +1264,16 @@ A. 地
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/08/12/2021%E5%B9%B4CSP-J1%E7%9C%9F%E9%A2%98/" class="post-nav-link">
+    <a href="/2023/08/12/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">2021年CSP-J1真题</div>
+        <div class="title-text">hexo文章插入本地图片</div>
       </div>
       <!-- <div class="content">
-        一、单向选择题第 1 题以下不属于面向对象程序设计语言的是（ ）。
-A. C++
-B. Python
-C. Java
-D
+        方法一：安装插件
+在Typora文件 –&gt; 设置偏好 –&gt; 图像。在插入图片时选择复制到指定路径&#96;，
       </div> -->
     </a>
   </div>
@@ -993,7 +1494,7 @@ D
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%A2%E8%A1%8C"><span class="toc-text">换行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="toc-text">上下标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%BC%8F"><span class="toc-text">分式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E3%80%81%E6%9E%81%E9%99%90%E3%80%81%E6%B1%82%E5%92%8C%E3%80%81%E4%B9%98%E7%A7%AF"><span class="toc-text">积分、极限、求和、乘积</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E4%B8%8B%E3%80%81%E4%B8%8A%E5%8F%96%E6%95%B4"><span class="toc-text">向下、上取整</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFInternet"><span class="toc-text">一、什么是Internet ?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B1%82"><span class="toc-text">分层</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%8F%E8%AE%AE%EF%BC%9F"><span class="toc-text">二、什么是协议？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E7%9A%84%E4%B8%89%E4%B8%AA%E9%83%A8%E5%88%86"><span class="toc-text">三、网络结构的三个部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BE%B9%E7%BC%98"><span class="toc-text">网络边缘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E7%BD%91%E7%BB%9C%E8%AE%BE%E6%96%BD%E7%9A%84%E9%9D%A2%E5%90%91%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-text">采用网络设施的面向连接服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E7%9A%84%E6%97%A0%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-text">采用基础设施的无连接服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83"><span class="toc-text">网络核心</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-text">电路交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="toc-text">分组交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2-vs-%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-text">分组交换 vs. 电路交换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91%E3%80%81%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="toc-text">接入网、物理媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91"><span class="toc-text">接入网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="toc-text">物理媒体</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Internet-ISP%E7%BB%93%E6%9E%84"><span class="toc-text">四、Internet&#x2F;ISP结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%B1%82-ISP"><span class="toc-text">三层 ISP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ISP%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-text">ISP之间的连接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%80%A7%E8%83%BD"><span class="toc-text">五、性能</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
