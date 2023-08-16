@@ -630,11 +630,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 3.1k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 4.6k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 12分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 20分钟 |
           </span>
   
           
@@ -875,8 +875,152 @@
 <blockquote>
 <p>选D。</p>
 </blockquote>
+<h2 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="type">long</span> n, ans;</span><br><span class="line"><span class="type">int</span> k, len;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> d[<span class="number">1000000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    d[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    len= <span class="number">1</span>;</span><br><span class="line">    ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">long</span> <span class="type">long</span> i = <span class="number">0</span>; i &lt;n; ++i) &#123;</span><br><span class="line">        ++d[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j + <span class="number">1</span>&lt;len; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (d[j] == k) &#123;</span><br><span class="line">                d[j] = <span class="number">0</span>;</span><br><span class="line">                d[j + <span class="number">1</span>] += <span class="number">1</span>;</span><br><span class="line">                ++ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (d[len- <span class="number">1</span>] == k) &#123;</span><br><span class="line">            d[len - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">            d[len] =<span class="number">1</span>;</span><br><span class="line">            ++len;</span><br><span class="line">            ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>假设输入的 <em>n</em> 是不超过 $2^{62}$ 的正整数，<em>k</em> 都是不超过 10000 的正整数，完成下面的判断题和单选题：</p>
+<p>判断题</p>
+<p>22、若 <em>k</em> &#x3D; 1，则输出 ans 时，len &#x3D; <em>n</em>。（ ）</p>
+<p>23、若 <em>k</em> &gt; 1，则输出 ans 时，len —定小于 <em>n</em>。（ ）</p>
+<p>24、若 <em>k</em> &gt; 1，则输出 ans 时，$k^{len}$ —定大于 <em>n</em>。（ ）</p>
+<p>单选题</p>
+<p>25、若输入的 <em>n</em> 等于：$10^{15}$，输入的 <em>k</em> 为 1，则输出等于（ ）。</p>
+<p>A. 1</p>
+<p>B. $(10^{30} − 10^{15}) \div 2$</p>
+<p>C. $(10^{30} + 10^{15}) \div 2$</p>
+<p>D. $10^{15}$</p>
+<p>26、若输入的 <em>n</em> 等于 205, 891, 132, 094, 649（即 $3^{30}$），输入的 <em>k</em> 为 3，则输出等于（ ）。</p>
+<p>A. $3^{30}$</p>
+<p>B. $(3^{30} − 1) \div 2$</p>
+<p>C. $3^{30} − 1$</p>
+<p>D. $(3^{30} + 1) \div 2$</p>
+<p>27、 若输入的 <em>n</em> 等于 100, 010, 002, 000, 090，输入的 <em>k</em> 为 10，则输出等于（ ）。</p>
+<p>A. 11, 112, 222, 444, 543</p>
+<p>B. 11,122, 222, 444, 453</p>
+<p>C. 11, 122, 222, 444, 543</p>
+<p>D. 11, 112, 222, 444, 453</p>
+<h2 id="2-3"><a href="#2-3" class="headerlink" title="2.3"></a>2.3</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;                     </span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;                                   </span><br><span class="line"><span class="type">int</span> d[<span class="number">50</span>][<span class="number">2</span>];                            </span><br><span class="line"><span class="type">int</span> ans;                                 </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> sum)</span> </span>&#123;               </span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;                            </span><br><span class="line">        ans = <span class="built_in">max</span>(sum, ans);           </span><br><span class="line">        <span class="keyword">return</span>;                                   </span><br><span class="line">    &#125;                                        </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;            </span><br><span class="line">        <span class="type">int</span> a = d[i - <span class="number">1</span>][<span class="number">0</span>], b = d[i - <span class="number">1</span>][<span class="number">1</span>];  </span><br><span class="line">        <span class="type">int</span> x = d[i][<span class="number">0</span>], y = d[i][<span class="number">1</span>];            </span><br><span class="line">        d[i - <span class="number">1</span>][<span class="number">0</span>] = a + x;                     </span><br><span class="line">        d[i - <span class="number">1</span>][<span class="number">1</span>] = b + y;                     </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt; n - <span class="number">1</span>; ++j)            </span><br><span class="line">            d[j][<span class="number">0</span>] = d[j + <span class="number">1</span>][<span class="number">0</span>], d[j][<span class="number">1</span>] = d[j + <span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">        <span class="type">int</span> s = a + x + <span class="built_in">abs</span>(b - y);              </span><br><span class="line">        <span class="built_in">dfs</span>(n - <span class="number">1</span>, sum + s);                    </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = n - <span class="number">1</span>; j &gt; i; --j)          </span><br><span class="line">            d[j][<span class="number">0</span>] = d[j - <span class="number">1</span>][<span class="number">0</span>], d[j][<span class="number">1</span>] = d[j - <span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">        d[i - <span class="number">1</span>][<span class="number">0</span>] = a, d[i - <span class="number">1</span>][<span class="number">1</span>] = b;        </span><br><span class="line">        d[i][<span class="number">0</span>] = x, d[i][<span class="number">1</span>] = y;                </span><br><span class="line">    &#125;                                        </span><br><span class="line">&#125;                                        </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;                             </span><br><span class="line">    cin &gt;&gt; n;                                </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)              </span><br><span class="line">        cin &gt;&gt; d[i][<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n;++i)</span><br><span class="line">        cin &gt;&gt; d[i][<span class="number">1</span>];</span><br><span class="line">    ans = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">dfs</span>(n, <span class="number">0</span>);</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>假设输入的 <em>n</em> 是不超过 50 的正整数，<code>d[i][0]</code>、<code>d[i][1]</code> 都是不超过 10000 的正整数，完成下面的判断题和单选题：</p>
+<p>判断题</p>
+<p>28、若输入 <em>n</em> 为 0，此程序可能会死循环或发生运行错误。（ ）</p>
+<p>29、若输入 <em>n</em> 为 20，接下来的输入全为 0，则输出为 0。（ ）</p>
+<p>30、输出的数一定不小于输入的 <code>d[i][0]</code> 和 <code>d[i][1]</code> 的任意一个。（ ）</p>
+<p>单选题</p>
+<p>31、若输入的 <em>n</em> 为 20，接下来的输入是 20 个 9 和 20 个 0，则输出为（ ）。</p>
+<p>A. 1890</p>
+<p>B. 1881</p>
+<p>C. 1908</p>
+<p>D. 1917</p>
+<p>32、若输入的 <em>n</em> 为 30，接下来的输入是 30 个 0 和 30 个 5，则输出为（ ）。</p>
+<p>A. 2000</p>
+<p>B. 2010</p>
+<p>C. 2030</p>
+<p>D. 2020</p>
+<p>33、若输入的 <em>n</em> 为 15，接下来的输入是 15 到 1，以及 15 到 1，则输出为（ ）。</p>
+<p>A. 2440</p>
+<p>B. 2220</p>
+<p>C. 2240</p>
+<p>D. 2420</p>
 <hr>
-<h1 id="三、完善程序"><a href="#三、完善程序" class="headerlink" title="三、完善程序"></a>三、完善程序</h1><hr>
+<h1 id="三、完善程序"><a href="#三、完善程序" class="headerlink" title="三、完善程序"></a>三、完善程序</h1><h2 id="3-1-质因数分解"><a href="#3-1-质因数分解" class="headerlink" title="3.1 质因数分解"></a>3.1 质因数分解</h2><p>给出正整数 <em>n</em>，请输出将 <em>n</em> 质因数分解的结果，结果从小到大输出。</p>
+<p>例如：输入 <em>n</em>&#x3D;120，程序应该输出 <code>2 2 2 3 5</code>，表示：120 &#x3D; 2 × 2 × 2 × 3 × 5。输入保证 2 ≤ <em>n</em> ≤ $10^9$。</p>
+<p>提示：先从小到大枚举变量 <em>i</em>，然后用 <em>i</em> 不停试除 <em>n</em> 来寻找所有的质因子。</p>
+<p>试补全程序。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n, i;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span>(i = ①; ② &lt;=n; i ++)&#123;</span><br><span class="line">        ③&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i);</span><br><span class="line">            n = n / i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(④)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, ⑤);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>34、①处应填（ ）</p>
+<p>A. <code>1</code></p>
+<p>B. <code>n-1</code></p>
+<p>C. <code>2</code></p>
+<p>D. <code>0</code></p>
+<blockquote>
+<p>选C。</p>
+</blockquote>
+<p>35、②处应填（ ）</p>
+<p>A. <code>n/i</code></p>
+<p>B. <code>n/(i*i)</code></p>
+<p>C. <code>i*i</code></p>
+<p>D. <code>i*i*i</code></p>
+<blockquote>
+<p>选C。</p>
+</blockquote>
+<p>36、③处应填（ )</p>
+<p>A. <code>if(n%i == 0)</code></p>
+<p>B. <code>if(i*i &lt;= n)</code></p>
+<p>C. <code>while(n%i == 0)</code></p>
+<p>D. <code>while(i*i &lt;= n)</code></p>
+<blockquote>
+<p>选C。</p>
+</blockquote>
+<p>37、④处应填（ ）</p>
+<p>A. <code>n &gt; 1</code></p>
+<p>B. <code>n &lt;= 1</code></p>
+<p>C. <code>i &lt; n / i</code></p>
+<p>D. <code>i + i &lt;= n</code></p>
+<blockquote>
+<p>选A。</p>
+</blockquote>
+<p>38、⑤处应填（ )</p>
+<p>A. <code>2</code></p>
+<p>B. <code>n/i</code></p>
+<p>C. <code>n</code></p>
+<p>D. <code>i</code></p>
+<blockquote>
+<p>选C。</p>
+</blockquote>
+<h2 id="3-2-最小区间覆盖"><a href="#3-2-最小区间覆盖" class="headerlink" title="3.2 最小区间覆盖"></a>3.2 最小区间覆盖</h2><p>给出 <em>n</em> 个区间，第 <em>i</em> 个区间的左右端点是 $[a_i, b_i]$。现在要在这些区间中选出若干个，使得区间 $[0, m]$ 被所选区间的并覆盖（即每一个 0 ≤ <em>i</em> ≤ <em>m</em> 都在某个所选的区间中）。保证答案存在，求所选区间个数的最小值。</p>
+<p>输入第一行包含两个整数 <em>n</em> 和 <em>m</em> （1 ≤ <em>n</em> ≤ 5000, 1 ≤ <em>m</em> ≤ $10^9$）</p>
+<p>接下来 <em>n</em> 行，每行两个整数 $a_i, b_i$ （0 ≤ $a_i, b_i$ ≤ <em>m</em>）。</p>
+<p>提示：使用贪心法解决这个问题。先用 <em>O</em>($n^2$) 的时间复杂度排序，然后贪心选择这些区间。</p>
+<p>试补全程序。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">5000</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">segment</span> &#123; <span class="type">int</span> a, b; &#125; A[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">()</span> <span class="comment">// 排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">            <span class="keyword">if</span> (①)</span><br><span class="line">            &#123;</span><br><span class="line">                segment t = A[j];</span><br><span class="line">                ②</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        cin &gt;&gt; A[i].a &gt;&gt; A[i]・b;</span><br><span class="line">    <span class="built_in">sort</span>();</span><br><span class="line">    <span class="type">int</span> p = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">        <span class="keyword">if</span> (③)</span><br><span class="line">            A[p++] = A[i];</span><br><span class="line">    n = p;</span><br><span class="line">    <span class="type">int</span> ans =<span class="number">0</span>, r = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> q = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (r &lt; m)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (④)</span><br><span class="line">            q++;</span><br><span class="line">        ⑤;</span><br><span class="line">        ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>39、①处应填（ ）</p>
+<p>A. <code>A[j].b &gt; A[j-1].b</code><br> B. <code>A[j].a &lt; A[j-1].a</code><br> C. <code>A[j].a &gt; A[j-1].a</code><br> D. <code>A[j].b &lt; A[j-1].b</code></p>
+<blockquote>
+<p>选B。</p>
+</blockquote>
+<p>40、②处应填（ ）</p>
+<p>A. <code>A[j+1] = A[j]; A[j] = t;</code></p>
+<p>B. <code>A[j-1] = A[j]; A[j] = t;</code></p>
+<p>C. <code>A[j] = A[j+1]; A[j+1] = t;</code></p>
+<p>D. <code>A[j] = A[j-1]; A[j-1] = t;</code></p>
+<blockquote>
+<p>选D。</p>
+</blockquote>
+<p>41、③处应填（ ）</p>
+<p>A. <code>A[i].b &gt; A[p-1].b</code></p>
+<p>B. <code>A[i].b &lt; A[i-1].b</code></p>
+<p>C. <code>A[i].b &gt; A[i-1].b</code></p>
+<p>D. <code>A[i].b &lt; A[p-1].b</code></p>
+<blockquote>
+<p>选A。</p>
+</blockquote>
+<p>42、④处应填（ ）</p>
+<p>A. <code>q+1 &lt; n &amp;&amp; A[q+1].a &lt;= r</code></p>
+<p>B. <code>q+1 &lt; n &amp;&amp; A[q+1].b &lt;= r</code></p>
+<p>C. <code>q &lt; n &amp;&amp; A[q].a &lt;= r</code></p>
+<p>D. <code>q &lt; n &amp;&amp; A[q].b &lt;= r</code></p>
+<blockquote>
+<p>选A。</p>
+</blockquote>
+<p>43、⑤处应填（ ）</p>
+<p>A. <code>r = max(r, A[q+1].b)</code></p>
+<p>B. <code>r = max(r, A[q].b)</code></p>
+<p>C. <code>r = max(r, A[q+1].a)</code></p>
+<p>D. <code>q++</code></p>
+<blockquote>
+<p>选B。</p>
+</blockquote>
+<hr>
 <p>参考</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://ti.luogu.com.cn/problemset/1034">1034 - CSP 2020 入门级第一轮 - 洛谷有题 (luogu.com.cn)</a></li>
@@ -920,6 +1064,31 @@
 <div class="post-nav">
 
 
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/2023/08/15/2019CSP-J1%E7%9C%9F%E9%A2%98/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">2019CSP-J1真题</div>
+      </div>
+      
+      <!-- <div class="content">
+        
+In Process
+
+一、单项选择题第 1 题
+中国的国家顶级域名是（）
+A. .cn
+B. .ch
+C. .chn
+      </div> -->
+    </a>
+  </div>
 
 
 
@@ -1156,7 +1325,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%8D%95%E5%90%91%E9%80%89%E6%8B%A9%E9%A2%98"><span class="toc-text">一、单向选择题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%98%85%E8%AF%BB%E7%A8%8B%E5%BA%8F"><span class="toc-text">二、阅读程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1"><span class="toc-text">2.1</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%8C%E5%96%84%E7%A8%8B%E5%BA%8F"><span class="toc-text">三、完善程序</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%8D%95%E5%90%91%E9%80%89%E6%8B%A9%E9%A2%98"><span class="toc-text">一、单向选择题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%98%85%E8%AF%BB%E7%A8%8B%E5%BA%8F"><span class="toc-text">二、阅读程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1"><span class="toc-text">2.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2"><span class="toc-text">2.2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3"><span class="toc-text">2.3</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%8C%E5%96%84%E7%A8%8B%E5%BA%8F"><span class="toc-text">三、完善程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E8%B4%A8%E5%9B%A0%E6%95%B0%E5%88%86%E8%A7%A3"><span class="toc-text">3.1 质因数分解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4%E8%A6%86%E7%9B%96"><span class="toc-text">3.2 最小区间覆盖</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1182,6 +1351,27 @@
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/08/15/2019CSP-J1%E7%9C%9F%E9%A2%98/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">08-15</span>
+                
+              </div>
+              <a class="post-title" href="/2023/08/15/2019CSP-J1%E7%9C%9F%E9%A2%98/">2019CSP-J1真题</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -1264,27 +1454,6 @@
                 
               </div>
               <a class="post-title" href="/2023/08/12/%E7%AC%AC1%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/">第1章 计算机网络概述</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/12/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-12</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/12/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/">hexo文章插入本地图片</a>
             </div>
           </div>
         

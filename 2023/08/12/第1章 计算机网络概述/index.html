@@ -630,11 +630,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 3.7k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 5.6k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 13分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 20分钟 |
           </span>
   
           
@@ -698,15 +698,6 @@
 </li>
 </ul>
 </li>
-</ul>
-<h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><p>每一层实现一个特定的功能，上一层借助于下一层提供的服务，通过跟对等层的协议实体，相互交换协议的报文，向上层提供更好的服务。</p>
-<p>例如：</p>
-<ul>
-<li>物理层把物理介质的<strong>01信号</strong>变成<strong>电磁波</strong>，发送和接收电磁波信号。</li>
-<li>链路层，相邻两点传输以<strong>帧</strong>为单位的数据，实现了了<strong>点到点</strong>的功能。</li>
-<li>网络层在链路层提供的点到点服务的基础上，实现了<strong>源主机</strong>到<strong>目标主机</strong>之间的数据传输，实现了<strong>端到端</strong>的功能。</li>
-<li>传输层加强和细分了网络层的服务，把<strong>主机</strong>之间的传输变成了<strong>进程</strong>之间的传输，解决了网络层<strong>传输不可靠</strong>的问题。</li>
-<li>应用层借助于传输层提供的服务，交换应用报文，实现各种各样的网络应用。</li>
 </ul>
 <hr>
 <h1 id="二、什么是协议？"><a href="#二、什么是协议？" class="headerlink" title="二、什么是协议？"></a>二、什么是协议？</h1><p>支撑互联网工作的<strong>标准</strong>。</p>
@@ -1189,13 +1180,327 @@
 <li>ICP自己部署专用网络，同时和各级ISP连接</li>
 </ul>
 <hr>
-<h1 id="五、性能"><a href="#五、性能" class="headerlink" title="五、性能"></a>五、性能</h1><p>丢包、延时、吞吐量</p>
+<h1 id="五、性能"><a href="#五、性能" class="headerlink" title="五、性能"></a>五、性能</h1><h2 id="延时"><a href="#延时" class="headerlink" title="延时"></a>延时</h2><p>在路由器缓冲区的分组队列 </p>
+<ul>
+<li>分组<strong>到达链路的速率</strong>超过了<strong>链路输出</strong>的能力 </li>
+<li>分组等待排到队头、被传输</li>
+</ul>
+<p>![分组延时和丢失](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230815103859909.png)</p>
+<p>四种分组延时 </p>
+<ol>
+<li><p>节点处理延时： </p>
+<ul>
+<li><p>检查 bit级差错 </p>
+</li>
+<li><p>检查分组首部和决定将分组导向何处</p>
+</li>
+</ul>
+</li>
+<li><p>排队延时 </p>
+<ul>
+<li>输出链路上等待传输的 时间 </li>
+<li>依赖于路由器的拥塞程</li>
+</ul>
+</li>
+<li><p>传输延时: </p>
+<ul>
+<li>R&#x3D;链路带宽(bps) </li>
+<li>L&#x3D;分组长度(bits) </li>
+<li>将分组发送到链路上的 时间&#x3D; L&#x2F;R </li>
+<li>存储转发延时</li>
+</ul>
+</li>
+<li><p>传播延时: </p>
+<ul>
+<li>d &#x3D; 物理链路的长度 </li>
+<li>s &#x3D; 在媒体上的传播速度 (~2x108 m&#x2F;sec) </li>
+<li>传播延时 &#x3D; d&#x2F;s</li>
+</ul>
+</li>
+</ol>
+<p>R&#x3D;链路带宽 (bps) ，L&#x3D;分组长度 (bits) ，a&#x3D;分组到达队列的平均速率 </p>
+<p>**流量强度 &#x3D; **$\frac{L \times a}R$ </p>
+<ul>
+<li>La&#x2F;R ~ 0: 平均排队延时很小 </li>
+<li>La&#x2F;R -&gt; 1: 延时变得很大 </li>
+<li>La&#x2F;R &gt; 1: 比特到达队列的速率超过了从该队 列输出的速率，平均排队延时将趋向无穷大！</li>
+</ul>
+<p>&#x3D;&#x3D;设计系统时流量强度不能大于1！&#x3D;&#x3D;</p>
+<h2 id="分组丢失"><a href="#分组丢失" class="headerlink" title="分组丢失"></a>分组丢失</h2><ul>
+<li><p>链路的队列缓冲区容量有限 </p>
+</li>
+<li><p>当分组到达一个满的队列时，该分组将会丢失 </p>
+</li>
+<li><p>丢失的分组可能会被被前一个节点或源端系统重传，或根本不重传</p>
+</li>
+</ul>
+<h2 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h2><p> 吞吐量: 在源端和目标端之间传输的速率（数 据量&#x2F;单位时间） </p>
+<ul>
+<li><strong>瞬间</strong>吞吐量: 在一个时间点的速率 </li>
+<li><strong>平均</strong>吞吐量: 在一个长时间内平均值</li>
+</ul>
+<p>![吞吐量](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230815115652346.png)</p>
+<p>瓶颈链路：端到端路径上，限制端到端吞吐的链路</p>
+<ul>
+<li><p>其他节点都不传输，一端为$R_s$，另一端为$R_c$，平均吞吐量为min{$R_s$, $R_c$}，瓶颈在小的一端。</p>
+</li>
+<li><p>端到端平均吞吐 &#x3D; min{ $R_1$，$R_2$ , …, $R_n$ }</p>
+</li>
+</ul>
+<p>互联网场景</p>
+<p>![互联网场景](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230815120359975.png)</p>
+<ul>
+<li>链路上的每一段实际可用带宽$R_i$’ &#x3D; ? 端到端吞吐量： min{ $R_i’$ } ?</li>
+<li>每个连接上的端到端吞吐:  min($R_c$ , $R_s$ , $R \div 10$) </li>
+<li>实际上: $R_c$ 或者 $R_s$ 经常是瓶颈</li>
+</ul>
 <hr>
-<p>协议层次、服务模型<br>历史</p>
+<h1 id="六、协议层次、服务模型"><a href="#六、协议层次、服务模型" class="headerlink" title="六、协议层次、服务模型"></a>六、协议层次、服务模型</h1><h2 id="协议层次"><a href="#协议层次" class="headerlink" title="协议层次"></a>协议层次</h2><p>网络是一个复杂的系统!  </p>
+<ul>
+<li>网络功能繁杂：数字信号的物理信号承载、点到点、路由、rdt、进 程区分、应用等 </li>
+<li>现实来看，网络的许多构成元素和 设备: <ul>
+<li>主机 </li>
+<li>路由器 </li>
+<li>各种媒体的链路 </li>
+<li>应用 </li>
+<li>协议 </li>
+<li>硬件, 软件</li>
+</ul>
+</li>
+</ul>
+<p><strong>层次化方式</strong>实现复杂网络功能: </p>
+<ul>
+<li>将网络复杂的功能分层功能明确的<strong>层次</strong>，每一层实现了其中一个或一 组<strong>功能</strong>，功能中有其上层可以使用的功能：<strong>服务</strong> </li>
+<li>本层协议实体相互交互执行本层的<strong>协议动作</strong>，目的是实现本层功能， 通过接口为上层提供更好的服务 </li>
+<li>在实现本层协议的时候，直接利用了<strong>下层所提供的服务</strong> </li>
+<li>本层的服务：借助下层服务实现的本层协议实体之间交互带来的新功 能（上层可以利用的）+更下层所提供的服务</li>
+</ul>
+<p>服务和服务访问点 </p>
+<ul>
+<li>服务( Service)：<strong>低层</strong>实体向<strong>上层</strong>实体提供它们之间的<strong>通信</strong>的能力 <ul>
+<li>服务用户(service user) </li>
+<li>服务提供者(service provider )</li>
+</ul>
+</li>
+<li>原语(primitive)：上层使用下层服务的形式，高层使用低层提供的服务，以及低层向高层提供服务都是通过服务访问<strong>原语</strong>来进行<strong>交互</strong>的—形式 </li>
+<li>服务访问点 SAP (Services Access Point) ：上层 使用下层提供的服务通过层间的<strong>接口</strong>—地点； <ul>
+<li>例子:邮箱 </li>
+<li>地址(address)：下层的一个实体支撑着上层的多个实体， SAP有标志不同上层实体的作用 </li>
+<li>可以有不同的实现，队列 </li>
+<li>例子:传输层的SAP: 端口(port)</li>
+</ul>
+</li>
+</ul>
+<p>服务的类型</p>
+<ul>
+<li>面向连接的服务</li>
+<li>面向无连接的服务</li>
+</ul>
+<p>服务和协议 </p>
+<ul>
+<li>服务与协议的区别 <ul>
+<li>服务(Service)：<strong>低层</strong>实体向<strong>上层</strong>实体提供它们之间的通信的能力，是通过原语(primitive)来操作的，<strong>垂直</strong></li>
+<li>协议(protocol) ：<strong>对等层</strong>实体(peer entity)之间在相互通信的过程中，需要遵循的规则的集合，<strong>水平</strong></li>
+</ul>
+</li>
+<li>服务与协议的联系 <ul>
+<li>本层<strong>协议的实现</strong>要靠下层提供的服务来实现 </li>
+<li>本层实体通过协议为上层<strong>提供更高级的服务</strong></li>
+</ul>
+</li>
+</ul>
+<p>数据单元(DU)</p>
+<p>![image-20230816120750303](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230816120750303.png)</p>
+<h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><table>
+<thead>
+<tr>
+<th align="center">分层结构</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">应用层</td>
+</tr>
+<tr>
+<td align="center">传输层</td>
+</tr>
+<tr>
+<td align="center">网络层</td>
+</tr>
+<tr>
+<td align="center">链路层</td>
+</tr>
+<tr>
+<td align="center">物理层</td>
+</tr>
+</tbody></table>
+<ul>
+<li>应用层: 网络应用 <ul>
+<li>为人类用户或者其他应用进程提供网络应用服务 </li>
+<li>FTP, SMTP, HTTP,DNS</li>
+</ul>
+</li>
+<li>传输层: 主机之间的数据传输 <ul>
+<li>在网络层提供的端到端通信基础上，细分为进程到进程，将不可靠的通信变成可靠地通信 </li>
+<li>TCP, UDP</li>
+</ul>
+</li>
+<li>网络层: 为数据报从源到目的选择路由 <ul>
+<li>主机主机之间的通信，端到端通信，不可靠 </li>
+<li>IP, 路由协议</li>
+</ul>
+</li>
+<li>链路层: 相邻网络节点间的数据传输 <ul>
+<li>2个相邻2点的通信，点到点通信，可靠或不可靠 </li>
+<li>点对对协议PPP, 802.11(wifi), Ethernet</li>
+</ul>
+</li>
+<li>物理层: 在线路上传送bit</li>
+</ul>
+<p>每一层实现一个特定的功能，上一层借助于下一层提供的服务，通过跟对等层的协议实体，相互交换协议的报文，向上层提供更好的服务。</p>
+<ul>
+<li>物理层把物理介质的<strong>01信号</strong>变成<strong>电磁波</strong>，发送和接收电磁波信号。</li>
+<li>链路层，相邻两点传输以<strong>帧</strong>为单位的数据，实现了了<strong>点到点</strong>的功能。</li>
+<li>网络层在链路层提供的点到点服务的基础上，实现了<strong>源主机</strong>到<strong>目标主机</strong>之间的数据传输，实现了<strong>端到端</strong>的功能。</li>
+<li>传输层加强和细分了网络层的服务，把<strong>主机</strong>之间的传输变成了<strong>进程</strong>之间的传输，解决了网络层<strong>传输不可靠</strong>的问题。</li>
+<li>应用层借助于传输层提供的服务，交换<strong>应用报文</strong>，实现各种各样的网络应用。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">ISO&#x2F;OSI 参考模型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">应用层</td>
+</tr>
+<tr>
+<td align="center">表示层</td>
+</tr>
+<tr>
+<td align="center">会话层</td>
+</tr>
+<tr>
+<td align="center">传输层</td>
+</tr>
+<tr>
+<td align="center">网络层</td>
+</tr>
+<tr>
+<td align="center">链路层</td>
+</tr>
+<tr>
+<td align="center">物理层</td>
+</tr>
+</tbody></table>
+<ul>
+<li>表示层: 允许应用解释传输的数据, e.g., 加密，压缩，机 器相关的表示转换 </li>
+<li>会话层: 数据交换的同步，检查点，恢复 </li>
+<li>互联网协议栈没有这两层! <ul>
+<li>这些服务，如果需要的话，必须被<strong>应用程序</strong>实现</li>
+</ul>
+</li>
+</ul>
+<p>![封装和解封装](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230816154727523.png)</p>
+<p>各层次的协议数据单元 </p>
+<ul>
+<li>应用层：报文(message) </li>
+<li>传输层：报文段(segment)：TCP段，UDP数据报 </li>
+<li>网络层：分组packet（如果无连接方式：数据报 datagram） </li>
+<li>数据链路层：帧(frame) </li>
+<li>物理层：位(bit)</li>
+</ul>
+<hr>
+<h1 id="七、历史"><a href="#七、历史" class="headerlink" title="七、历史"></a>七、历史</h1><p>![image-20230816164241892](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230816164241892.png)</p>
+<hr>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul>
+<li><p>组成角度看什么是互联网 </p>
+<ul>
+<li><p>边缘：端系统（包括应用）+ 接入网 </p>
+</li>
+<li><p>核心：网络交换设备+通信链路 </p>
+</li>
+<li><p>协议：对等层实体通信过程中遵守的规则的集合 </p>
+<ul>
+<li>语法，语义，时序</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>为了实现复杂的网络功能，采用分层方式设计、实现和调试 </p>
+<ul>
+<li>应用层，传输层，网络层，数据链路层，物理层 </li>
+<li>协议数据单位： <ul>
+<li>报文，报文段，分组，帧，位</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>从 服务角度看互联网 </p>
+<ul>
+<li>通信服务基础设施 <ul>
+<li>提供的通信服务：面向连接 无连接</li>
+</ul>
+</li>
+<li>应用</li>
+</ul>
+</li>
+<li><p>应用之间的交互 </p>
+<ul>
+<li>C&#x2F;S模式 </li>
+<li>P2P模式</li>
+</ul>
+</li>
+<li><p>数据交换 </p>
+<ul>
+<li>分组数据交换 </li>
+<li>线路交换 </li>
+<li>比较 线路交换和分组交换</li>
+</ul>
+</li>
+<li><p>分组交换的2种方式 </p>
+<ul>
+<li>虚电路 </li>
+<li>数据报</li>
+</ul>
+</li>
+<li><p>接入网和物理媒介 </p>
+<ul>
+<li>接入网技术： <ul>
+<li>住宅：ADSL，拨号，cable modem </li>
+<li>单位：以太网 </li>
+<li>无线接入方式</li>
+</ul>
+</li>
+<li>物理媒介 <ul>
+<li>光纤，同轴电缆，以太网，双绞线</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ISP层次结构</p>
+</li>
+<li><p>分组交换网络中延迟和丢失是如何发生的 </p>
+<ul>
+<li>延迟的组成：处理、传输、传播、排队</li>
+</ul>
+</li>
+<li><p>网络的分层体系结构 </p>
+<ul>
+<li>分层体系结构 </li>
+<li>服务 </li>
+<li>协议数据单元 </li>
+<li>封装与解封装</li>
+</ul>
+</li>
+<li><p>历史</p>
+</li>
+</ul>
 <hr>
 <p>对应视频</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JV411t7ow?p=5&vd_source=49e30194f6d5798a1f90d69dad9c0460">1.3 网络核心_哔哩哔哩_bilibili</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JV411t7ow?p=3&vd_source=49e30194f6d5798a1f90d69dad9c0460">1.1 什么是Internet？_哔哩哔哩_bilibili</a></li>
+<li>…</li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JV411t7ow?p=11&vd_source=49e30194f6d5798a1f90d69dad9c0460">1.9 小结_哔哩哔哩_bilibili</a></li>
 </ul>
 
       </div>
@@ -1494,7 +1799,7 @@ D
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFInternet"><span class="toc-text">一、什么是Internet ?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B1%82"><span class="toc-text">分层</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%8F%E8%AE%AE%EF%BC%9F"><span class="toc-text">二、什么是协议？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E7%9A%84%E4%B8%89%E4%B8%AA%E9%83%A8%E5%88%86"><span class="toc-text">三、网络结构的三个部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BE%B9%E7%BC%98"><span class="toc-text">网络边缘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E7%BD%91%E7%BB%9C%E8%AE%BE%E6%96%BD%E7%9A%84%E9%9D%A2%E5%90%91%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-text">采用网络设施的面向连接服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E7%9A%84%E6%97%A0%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-text">采用基础设施的无连接服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83"><span class="toc-text">网络核心</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-text">电路交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="toc-text">分组交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2-vs-%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-text">分组交换 vs. 电路交换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91%E3%80%81%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="toc-text">接入网、物理媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91"><span class="toc-text">接入网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="toc-text">物理媒体</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Internet-ISP%E7%BB%93%E6%9E%84"><span class="toc-text">四、Internet&#x2F;ISP结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%B1%82-ISP"><span class="toc-text">三层 ISP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ISP%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-text">ISP之间的连接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%80%A7%E8%83%BD"><span class="toc-text">五、性能</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFInternet"><span class="toc-text">一、什么是Internet ?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%8F%E8%AE%AE%EF%BC%9F"><span class="toc-text">二、什么是协议？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E7%9A%84%E4%B8%89%E4%B8%AA%E9%83%A8%E5%88%86"><span class="toc-text">三、网络结构的三个部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BE%B9%E7%BC%98"><span class="toc-text">网络边缘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E7%BD%91%E7%BB%9C%E8%AE%BE%E6%96%BD%E7%9A%84%E9%9D%A2%E5%90%91%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-text">采用网络设施的面向连接服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E7%9A%84%E6%97%A0%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-text">采用基础设施的无连接服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83"><span class="toc-text">网络核心</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-text">电路交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="toc-text">分组交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2-vs-%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-text">分组交换 vs. 电路交换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91%E3%80%81%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="toc-text">接入网、物理媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91"><span class="toc-text">接入网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="toc-text">物理媒体</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Internet-ISP%E7%BB%93%E6%9E%84"><span class="toc-text">四、Internet&#x2F;ISP结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%B1%82-ISP"><span class="toc-text">三层 ISP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ISP%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-text">ISP之间的连接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%80%A7%E8%83%BD"><span class="toc-text">五、性能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%B6%E6%97%B6"><span class="toc-text">延时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%B8%A2%E5%A4%B1"><span class="toc-text">分组丢失</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%9E%E5%90%90%E9%87%8F"><span class="toc-text">吞吐量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%8D%8F%E8%AE%AE%E5%B1%82%E6%AC%A1%E3%80%81%E6%9C%8D%E5%8A%A1%E6%A8%A1%E5%9E%8B"><span class="toc-text">六、协议层次、服务模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E5%B1%82%E6%AC%A1"><span class="toc-text">协议层次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B1%82"><span class="toc-text">分层</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%8E%86%E5%8F%B2"><span class="toc-text">七、历史</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1520,6 +1825,27 @@ D
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/08/15/2019CSP-J1%E7%9C%9F%E9%A2%98/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">08-15</span>
+                
+              </div>
+              <a class="post-title" href="/2023/08/15/2019CSP-J1%E7%9C%9F%E9%A2%98/">2019CSP-J1真题</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -1602,27 +1928,6 @@ D
                 
               </div>
               <a class="post-title" href="/2023/08/12/%E7%AC%AC1%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/">第1章 计算机网络概述</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/12/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-12</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/12/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/">hexo文章插入本地图片</a>
             </div>
           </div>
         
