@@ -630,11 +630,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 2.6k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 2.9k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 11分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 13分钟 |
           </span>
   
           
@@ -939,7 +939,11 @@ flowchart LR
 </blockquote>
 <hr>
 <h1 id="三、完善程序"><a href="#三、完善程序" class="headerlink" title="三、完善程序"></a>三、完善程序</h1><h2 id="（1）Josephus-问题"><a href="#（1）Josephus-问题" class="headerlink" title="（1）Josephus 问题"></a>（1）Josephus 问题</h2><p>有 <em>n</em> 个人围成一个圈，依次标号 0 至 <em>n</em>−1。从 00 号开始，依次 0,1,0,1,…交替报数，报到 1 的人会离开，直至圈中只剩下一个人。求最后剩下人的编号。</p>
-<p>试补全模拟程序。 <img src="https://ipic.luogu.com.cn/k4gdx.png" class="lazyload placeholder" data-srcset="https://ipic.luogu.com.cn/k4gdx.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
+<p>试补全模拟程序。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">1000000</span>;</span><br><span class="line"><span class="type">int</span> F[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>, p = <span class="number">0</span>, c = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (①) &#123;</span><br><span class="line">        <span class="keyword">if</span>(F[i] == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(②) &#123;</span><br><span class="line">                F[i] =<span class="number">1</span>;</span><br><span class="line">                ③;</span><br><span class="line">            &#125;</span><br><span class="line">            ④;</span><br><span class="line">        &#125;</span><br><span class="line">        ⑤;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i =<span class="number">0</span>;i &lt; n; i++)</span><br><span class="line">        <span class="keyword">if</span>(F[i] ==<span class="number">0</span>)</span><br><span class="line">            ans = i;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 <p>34、①处应填（ ）<br>A.<code>i &lt; n</code><br>B.<code>c &lt; n</code><br>C.<code>i &lt; n- 1</code><br>D.<code>c &lt; n-1</code></p>
 <blockquote>
 <p>选D。变量c表示离开的人数，假设n为3，c&#x3D;2时就停止，故选<code>c &lt; n - 1</code></p>
@@ -962,7 +966,10 @@ flowchart LR
 </blockquote>
 <hr>
 <h2 id="（2）矩形计数"><a href="#（2）矩形计数" class="headerlink" title="（2）矩形计数"></a>（2）矩形计数</h2><p>平面上有 <em>n</em> 个关键点，求有多少个四条边都和 <em>x</em> 轴或者 <em>y</em> 轴平行的矩形，满足四个顶点都是关键点。给出的关键点可能有重复，但完全重合的矩形只计一 次。</p>
-<p> <img src="https://ipic.luogu.com.cn/v7s04.webp" class="lazyload placeholder" data-srcset="https://ipic.luogu.com.cn/v7s04.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"> </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">point</span> &#123;</span><br><span class="line">	<span class="type">int</span> x, y, id;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">equals</span><span class="params">(point a, point b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.x == b.x &amp;&amp; a.y == b.y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(point a, point b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> ①;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sort</span><span class="params">(point A[], <span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">cmp</span>(A[j], A[j - <span class="number">1</span>])) &#123;</span><br><span class="line">				point t = A[j];</span><br><span class="line">				A[j] = A[j - <span class="number">1</span>];</span><br><span class="line">				A[j- <span class="number">1</span>] = t;</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">unique</span><span class="params">(point A[],<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    	<span class="keyword">if</span>(②)</span><br><span class="line">    		A[t++] = A[i];</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">binary_search</span><span class="params">(point A[], <span class="type">int</span> n, <span class="type">int</span> x, <span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">    point p;</span><br><span class="line">    p.x = x;</span><br><span class="line">    p.y = y;</span><br><span class="line">    p.id = n;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>, b = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (a &lt; b) &#123;</span><br><span class="line">        <span class="type">int</span> mid = ③;</span><br><span class="line">        <span class="keyword">if</span>(④)</span><br><span class="line">            a = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            b = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">equals</span>(A[a], p);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">1000</span>;</span><br><span class="line">point A[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        cin &gt;&gt; A[i].× &gt;&gt; A[i].y;</span><br><span class="line">        A[i].id = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(A, n);</span><br><span class="line">    n = <span class="built_in">unique</span>(A, n);</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">   		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">    		<span class="keyword">if</span> (⑤ &amp;&amp; <span class="built_in">binary_search</span>(A, n, A[i].x, A[j].y) &amp;&amp; </span><br><span class="line">                <span class="built_in">binary_search</span>(A, n, A[j].x,A[i].y)) &#123;</span><br><span class="line">    		ans++;</span><br><span class="line">            &#125;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+
+
 <p>试补全枚举算法。</p>
 <p>39、①处应填 ( )<br>A. <code>a.x != b.x ? a.x &lt; b.x : a.id &lt; b.id</code><br>B. <code>a.x != b.x ? a.x &lt; b.x : a.y &lt; b.y</code><br>C. <code>equals(a, b) ? a.id &lt; b.id : a.x &lt; b.x</code><br>D. <code>equals(a, b) ? a.id &lt; b.id : (a.x != b.x ? a.x &lt; b.x : a.y &lt; b.y)</code></p>
 <blockquote>
@@ -1319,6 +1326,48 @@ flowchart LR
             
 
             <div class="post-img-box">
+              <a href="/2023/08/24/SQL%E6%B3%A8%E5%85%A5%E4%B9%8B%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%8F%90%E4%BA%A4%E6%96%B9%E5%BC%8F/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">08-24</span>
+                
+              </div>
+              <a class="post-title" href="/2023/08/24/SQL%E6%B3%A8%E5%85%A5%E4%B9%8B%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%8F%90%E4%BA%A4%E6%96%B9%E5%BC%8F/">SQL注入之类型及提交方式</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/08/21/%E8%80%83%E7%82%B9%E7%BB%9F%E8%AE%A1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">08-21</span>
+                
+              </div>
+              <a class="post-title" href="/2023/08/21/%E8%80%83%E7%82%B9%E7%BB%9F%E8%AE%A1/">2019-2022 CSP-J1 考点统计</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
               <a href="/2023/08/16/%E7%AC%AC2%E7%AB%A0-%E5%BA%94%E7%94%A8%E5%B1%82/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
@@ -1373,48 +1422,6 @@ flowchart LR
                 
               </div>
               <a class="post-title" href="/2023/08/14/2020CSP-J1%E7%9C%9F%E9%A2%98/">2020CSP-J1真题</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/12/LaTeX%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-12</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/12/LaTeX%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/">LaTeX常用公式</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/12/2021%E5%B9%B4CSP-J1%E7%9C%9F%E9%A2%98/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-12</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/12/2021%E5%B9%B4CSP-J1%E7%9C%9F%E9%A2%98/">2021年CSP-J1真题</a>
             </div>
           </div>
         
