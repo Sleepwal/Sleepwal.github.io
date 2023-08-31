@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>hexo文章插入本地图片 | SleepBlog</title>
+  <title>CSP-J高频考点-排列组合 | SleepBlog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -598,21 +598,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        hexo文章插入本地图片
+        CSP-J高频考点-排列组合
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2023-08-12 |
+          <i class="fas fa-calendar"></i> 发表于：2023-08-31 |
         </span>
       
 
@@ -620,8 +620,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/hexo%E9%85%8D%E7%BD%AE/" class="post-detail-header_category">
-              hexo配置
+            <a href="/categories/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/" class="post-detail-header_category">
+              排列组合
             </a>
           
         </span>
@@ -630,11 +630,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 418 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 2.9k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 10分钟 |
           </span>
   
           
@@ -661,68 +661,394 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="方法一：安装插件"><a href="#方法一：安装插件" class="headerlink" title="方法一：安装插件"></a>方法一：安装插件</h2><ol>
-<li>在<code>Typora文件</code> –&gt; <code>设置偏好</code> –&gt; <code>图像</code>。在<code>插入图片时</code>选择复制到指定路径&#96;，设置为</li>
+        <h1 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h1><p>排列组合考的是逻辑思维</p>
+<h2 id="分类加法计数原理"><a href="#分类加法计数原理" class="headerlink" title="分类加法计数原理"></a>分类加法计数原理</h2><h2 id="分布乘法计数原理"><a href="#分布乘法计数原理" class="headerlink" title="分布乘法计数原理"></a>分布乘法计数原理</h2><h1 id="常见题型"><a href="#常见题型" class="headerlink" title="常见题型"></a>常见题型</h1><h2 id="1、特殊元素优先安排"><a href="#1、特殊元素优先安排" class="headerlink" title="1、特殊元素优先安排"></a>1、特殊元素优先安排</h2><p>例1：六个人从左至右排成一行，最左端只能排甲或乙，最右端不能排甲，有多少种排法?</p>
+<blockquote>
+<p>特殊元素使<strong>最左端</strong>和<strong>最右端</strong>，那么先选最左端，再选最右端，最后选其余4个位置。（先右后左也行）</p>
+<ol>
+<li>最左端有两种选法。</li>
+<li>此时选最右端就有问题：如果最左端是甲，最右端有<strong>5种选法</strong>；如果最左端是乙，最右端<strong>不能排甲</strong>，有<strong>4种选法</strong>。</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./$&#123;filename&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>安装插件</li>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>甲</th>
+<th>*</th>
+<th>*</th>
+<th>*</th>
+<th>*</th>
+<th>5种选法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>乙</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td>4种选法</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>遇到这种情况：有两种不一样方案，就需要分类。</p>
+<p>做题时不需要一开始就想怎么分类，按正常的步骤去做，遇到<strong>有不确定的方案</strong>时，再去分类。</p>
+</blockquote>
+<p>分成两类，第一类最左端为<strong>甲</strong>，第二类最右端为<strong>乙</strong>。最左端已经确定，不需要再选了。步骤变成：先选最右端，最后选其余4个位置。</p>
+<ul>
+<li>第一类<ol>
+<li>最右端：5种</li>
+<li>其余4人：$A_4^4$</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>配置文件（可以不配置，Typora复制图片时就会创建目录）<ul>
-<li>在 Hexo 根目录打开配置文件 <code>_config.yml</code></li>
-<li>搜索 <code>post_asset_folder</code>，<code>false</code> 改为 <code>true</code></li>
-<li><code>hexo new page</code> 生成新文章，会在同级目录创建一个同名文件夹。</li>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>甲</th>
+<th>*</th>
+<th>*</th>
+<th>*</th>
+<th>*</th>
+<th>5种选法</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>第二类<ol>
+<li>最右端：4种</li>
+<li>其余4人：$A_4^4$</li>
+</ol>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>乙</th>
+<th>*</th>
+<th>*</th>
+<th>*</th>
+<th>*</th>
+<th>4种选法</th>
+</tr>
+</thead>
+</table>
+<blockquote>
+<p>故结果为 $5 \times A_4^4 + 4 \times A_4^4$。</p>
+</blockquote>
+<h3 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h3><p>1、用0，1，2，3，4组成一个无重复数字的五位偶数有多少个？</p>
+<p>2、A B C D E 5个人出4个人完成 a b c d 四项工作，出任务的4人每人完成一个工作，每个工作安排给一个人，</p>
+<p>其中 A B 只会做 a b 这两种工作，其余人可以胜任所有工作，有多少种不同的安排任务的方式？</p>
+<p>3、有5张卡片，正反两面分别写有数字0与1，2与3，4与5，6与7，8与9，先从中取出3张排成一列，可以摆成多少个不同的三位数？</p>
+<hr>
+<hr>
+<p>解析分割线</p>
+<hr>
+<hr>
+<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>1、用0，1，2，3，4组成一个无重复数字的五位偶数有多少个？</p>
+<blockquote>
+<p>五位数，<strong>首位</strong>不能为0，<strong>最后一位</strong>只能为0、2、4，该题是<strong>特殊元素优先安排</strong>。</p>
+<ol>
+<li>先选<strong>最后一位</strong></li>
+<li>再选<strong>首位</strong></li>
+<li>最后选其余的位。</li>
+</ol>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>4种</th>
+<th>*</th>
+<th>*</th>
+<th>*</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3种</td>
+<td>*</td>
+<td>*</td>
+<td>*</td>
+<td>2 | 4</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>最后一位如果为<strong>0</strong>，首位无影响，有4种；最后一位为<strong>2或4</strong>，首位不能为0，只有3种。</p>
+</blockquote>
+<p>那么分成两类</p>
+<ul>
+<li>第一类：最后一位为0<ol>
+<li>首位无影响，跟其余位一起算，$A_4^4$</li>
+</ol>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>4种</th>
+<th>*</th>
+<th>*</th>
+<th>*</th>
+<th>0</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>第二类<ol>
+<li>最后一位：2种</li>
+<li>首位：3种</li>
+<li>其余3位：$A_3^3$</li>
+</ol>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>3种</th>
+<th>*</th>
+<th>*</th>
+<th>*</th>
+<th>2 | 4</th>
+</tr>
+</thead>
+</table>
+<blockquote>
+<p>故$2 \times 3 \times A_3^3 + A_4^4$。</p>
+</blockquote>
+<hr>
+<p>2、A B C D E 5个人出4个人完成 a b c d 四项工作，出任务的4人每人完成一个工作，每个工作安排给一个人，</p>
+<p>其中 A B 只会做 a b 这两种工作，其余人可以胜任所有工作，有多少种不同的安排任务的方式？</p>
+<blockquote>
+<p>这些题都有两种切入角度：</p>
+<p>第一种：人选工作</p>
+<ul>
+<li>分成3类：<ul>
+<li>A，C，D，E</li>
+<li>B，C，D，E</li>
+<li>A，B，<code>*</code>，<code>*</code></li>
 </ul>
 </li>
-</ol>
-<blockquote>
-<p>大概是从 <code>Hexo 5</code> 开始<a target="_blank" rel="noopener" href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a> 已无效。</p>
-</blockquote>
-<hr>
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>官方提供的方式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>通过这种方式，图片将会同时出现在文章和主页以及归档页中。</p>
-<blockquote>
-<p>但是这样不方便，Typora不能显示图片。</p>
-</blockquote>
-<hr>
-<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a> 3.1.0 引入了一个新的选项，其允许你无需使用 <code>asset_img</code> 标签插件就可以在 markdown 中嵌入图片</p>
-<p>如需启用：修改一下配置文件_config.yml</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>然后再配置一下Typora</p>
-<ol>
-<li><p>在Hexo根目录（<code>HexoBlog</code>）的<code>source</code>下新建<code>imags</code>文件夹。</p>
-<blockquote>
-<p>注意<code>imags</code>与<code>_posts</code><strong>同级</strong>。</p>
-</blockquote>
-<p><img src="/../images/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/image-20230813232133245.png" class="lazyload placeholder" data-srcset="/../images/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/image-20230813232133245.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230813232133245"></p>
-</li>
-<li><p>在Typora<code>文件</code> –&gt; <code>设置偏好</code> –&gt; <code>图像</code>。在<code>插入图片时</code>选择<code>复制到指定路径</code>，设置为</p>
-</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../../source/images//$&#123;filename&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>在<code>格式</code> –&gt; <code>图像</code> –&gt; <code>设置图片根目录</code>将<code>HexoBlog/source</code>设置为<strong>根目录</strong>。（本人测试不设置根目录也行，根据自己情况来设置）</li>
-</ol>
-<hr>
-<p>参考文章</p>
+<li>然后再去分配工作。</li>
+</ul>
+<p>第二种：工作选人</p>
 <ul>
-<li><p><a target="_blank" rel="noopener" href="https://moeci.com/posts/hexo-typora/">Hexo + Typora + 开发Hexo插件 解决图片路径不一致 | yiyun’s Blog (moeci.com)</a></p>
+<li>此时特殊元素是<strong>c、d</strong>。因为a、b这两个工作谁都能做，c、d工作只有C、D、E能做。</li>
+</ul>
+<p>只需要两步，先确定特殊元素，再确定其余元素。</p>
+<ol>
+<li>给c、d选人：从C、D、E里选两个人，$A_3^2$</li>
+<li>给a、b选人：从剩余的3人里选两个人，$A_3^2$</li>
+</ol>
+<p>故$A_3^2 \times A_3^2$。</p>
+</blockquote>
+<p>3、有5张卡片，正反两面分别写有数字0与1，2与3，4与5，6与7，8与9，先从中取出3张排成一列，可以摆成多少个不同的三位数？</p>
+<blockquote>
+<p>如果按着题目走，先从5张卡片里选3张，再排列，然后卡片正面还是反面，还要判断<code>0|1</code>这张卡片，十分难做。</p>
+<p>那么可以跟第2题一样想，换一个切入角度，跳出题目的场景，位置选数，给这三位数<strong>逐位</strong>选数字：</p>
+<ol>
+<li>选百位：0不能选，有9种。</li>
+<li>选十位：百位数消耗了1张卡片，剩4张卡片，只有8个数字，有8种。</li>
+<li>选个位：百位、十位消耗了2张卡片，剩3张卡片，只有6个数字，有6种。</li>
+</ol>
+<p>故结果为$9 \times 8 \times 6$。</p>
+</blockquote>
+<h2 id="2、捆绑法"><a href="#2、捆绑法" class="headerlink" title="2、捆绑法"></a>2、捆绑法</h2><ul>
+<li>特点：元素需要<strong>相邻</strong>。</li>
+</ul>
+<p>例题：7人站成一排，其中甲乙相邻且丙丁相邻，共有多少种不同的排法？</p>
+<blockquote>
+<p>将相邻的两个人看作<strong>一个人</strong>，相当于绑起来。相邻的两个人是有顺序的：甲乙、乙甲，要乘2。</p>
+<ol>
+<li>甲乙捆：2种</li>
+<li>丙丁捆：2种</li>
+<li>全部一起排：此时相当于5个人，$A_5^5$</li>
+</ol>
+<p>故结果为$2 \times 2 \times A_5^5$</p>
+</blockquote>
+<h3 id="习题-1"><a href="#习题-1" class="headerlink" title="习题"></a>习题</h3><p>1、一排9个座位坐了3个三口之家，若每家人坐在一起，则不同的坐法种数为？</p>
+<p>2、8个车位，5辆不同的车，车全停一起多少种停法?空车位全在一起多少种停法？</p>
+<hr>
+<hr>
+<p>解析分割线</p>
+<hr>
+<hr>
+<h3 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h3><p>1、一排9个座位坐了3个三口之家，若每家人坐在一起，则不同的坐法种数为？</p>
+<table>
+<thead>
+<tr>
+<th>a1 a2 a3</th>
+<th>b1 b2 b3</th>
+<th>c1 c2 c3</th>
+</tr>
+</thead>
+</table>
+<blockquote>
+<p>将同一家的人捆在一起</p>
+<ol>
+<li>a1 a2 a3：$A_3^3$</li>
+<li>b1 b2 b3：$A_3^3$</li>
+<li>c1 c2 c3：$A_3^3$</li>
+<li>全部一起排：$A_3^3$</li>
+</ol>
+</blockquote>
+<p>2、8个车位，5辆不同的车，车全停一起多少种停法？空车位全在一起多少种停法？</p>
+<blockquote>
+<p>车全停一起</p>
+<ol>
+<li>5辆车捆：$A_5^5$</li>
+<li>停大车：4种</li>
+</ol>
+<p>空车位停一起</p>
+<ol>
+<li>3个空车位捆：空车位之间一样，调换顺序没有区别，1种</li>
+<li>全部排：3个空车位看作一个，相当于6，$A_6^6$</li>
+</ol>
+</blockquote>
+<h2 id="3、插空法"><a href="#3、插空法" class="headerlink" title="3、插空法"></a>3、插空法</h2><p>特点：元素需要<strong>不相邻</strong>。</p>
+<p>例题：某班新年联欢会原定的5个节目已排成节目单，开演前又增加了两个新节目。如果将这两个新节目插入原节目单中，那么不同插法的种数为？且两个新节目不相邻，那么不同插法的种数为?</p>
+<blockquote>
+<p>直接插入无要求：第一个节目从6个空插入有6种；第二个节目插入时，此时多了一个节目，有7个空，插入有7种。</p>
+<p>不相邻：5个节目有6个空隙，从6个空里插两个节目，$A_6^2$。</p>
+</blockquote>
+<h3 id="习题-2"><a href="#习题-2" class="headerlink" title="习题"></a>习题</h3><p>1、4个男生，3个女生站成一排，三个女生中有且只有两个女生相邻，多少种不同的排法？</p>
+<p>2、8个车位，5辆不同的车，只有空车位互不相邻在一起多少种停法？只有2个空车位在一起多少种停法?</p>
+<hr>
+<hr>
+<p>解析分割线</p>
+<hr>
+<hr>
+<h3 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h3><p>1、4个男生，3个女生站成一排，三个女生中有且只有两个女生相邻，多少种不同的排法？</p>
+<blockquote>
+<p>2个女生相邻，剩下的一个女生不能与这2个女生相邻，就有不相邻了。</p>
+<ol>
+<li>4个男生：$A_4^4$</li>
+<li>3个女生选2个捆：$A_3^2$</li>
+<li>插空：$A_5^2$</li>
+</ol>
+</blockquote>
+<p>2、8个车位，5辆不同的车，只有空车位互不相邻在一起多少种停法？只有2个空车位在一起多少种停法?</p>
+<blockquote>
+<p>空车位互不相邻：</p>
+<ol>
+<li>排5辆车：$A_5^5$</li>
+<li>插空：空车位调换没有影响，$C_6^3$</li>
+</ol>
+<p>只有2个空车位相邻：</p>
+<ol>
+<li>排5辆车：$A_5^5$</li>
+<li>绑2空车位：空车位一样，没有顺序，1种</li>
+<li>6空隙插空：插入两个元素：两个空车位、一个空车位，此时这两个元素不一样，$A_6^2$</li>
+</ol>
+</blockquote>
+<h2 id="4、正难则反策略"><a href="#4、正难则反策略" class="headerlink" title="4、正难则反策略"></a>4、正难则反策略</h2><h2 id="5、定序问题-相同元素排列问题"><a href="#5、定序问题-相同元素排列问题" class="headerlink" title="5、定序问题 &amp; 相同元素排列问题"></a>5、定序问题 &amp; 相同元素排列问题</h2><ul>
+<li>定序问题：部分元素<strong>顺序已经定好</strong>，<strong>只选不排</strong>。</li>
+<li>相同元素排列问题：部分元素<strong>相同</strong>，没有顺序，<strong>只选不排</strong>。</li>
+</ul>
+<p>例题1：7个人排队，其中甲在乙前面，乙在丙前面。</p>
+<blockquote>
+<ol>
+<li>甲乙丙三人选位置：$C_7^3$</li>
+<li>甲乙丙：三人的顺序已经定好，只有1种</li>
+<li>余4人：$A_4^4$</li>
+</ol>
+</blockquote>
+<p>例题2：<code>1 1 1 2 3</code>组成5位数，几种可能？</p>
+<blockquote>
+<ol>
+<li>给三个<code>1</code>选三个位置：$C_5^3$</li>
+<li>三个<code>1</code>：交换没有区别，1种</li>
+<li>余2个：$A_2^2$</li>
+</ol>
+</blockquote>
+<h3 id="习题-3"><a href="#习题-3" class="headerlink" title="习题"></a>习题</h3><p>1、某工程队有6项工程需要单独完成，其中工程乙必须在工程甲完成之后才能进行，工程丙必须在工程乙完成之后才能进行，工程丁必须在工程丙完成之后立即进行，共有多少种方案？</p>
+<p>2、三位数中，123叫做严格递增数，530叫做严格递减数，严格单调3位数有多少个？</p>
+<p>3、7人身高不同，排成一排，中间最高，两侧依次降低，多少种排法？</p>
+<p>4、把good写错多少种方法?把error写错多少种方法?</p>
+<hr>
+<hr>
+<p>解析分割线</p>
+<hr>
+<hr>
+<h3 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h3><p>1、某工程队有6项工程需要单独完成，其中工程乙必须在工程甲完成之后才能进行，工程丙必须在工程乙完成之后才能进行，工程丁必须在工程丙完成之后立即进行，共有多少种方案？</p>
+<blockquote>
+<p>甲 –&gt; 乙 –&gt; 丙丁，丙丁看作一个工程。</p>
+<ol>
+<li>3个工程选：$C_5^3$</li>
+<li>3个工程：顺序已经定好，1种</li>
+<li>余2：$A_2^2$</li>
+</ol>
+</blockquote>
+<p>2、三位数中，123叫做严格递增数，530叫做严格递减数，严格单调3位数有多少个？</p>
+<blockquote>
+<p>递<strong>减</strong>数：</p>
+<ol>
+<li>从10个里选3个：$C_{10}^3$</li>
+<li>这3个数需要递减，只有1种</li>
+</ol>
+<p>递<strong>增</strong>数：</p>
+<ol>
+<li>从10个里选3个：0不能选，剩9个数，$C_{9}^3$</li>
+<li>这3个数需要递增，只有1种</li>
+</ol>
+<p>故$C_{10}^3 + C_{9}^3$。</p>
+</blockquote>
+<p>3、7人身高不同，排成一排，中间最高，两侧依次降低，多少种排法？</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th>最高</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+</table>
+<blockquote>
+<p>中间只能是最高的一个，只有1种，没得选。</p>
+<ol>
+<li>选左边3人：$C_6^3$</li>
+<li>选右边3人：$C_3^3$</li>
+</ol>
+<p>顺序已经定好了，只能向两侧依次降低，只有1种。</p>
+<p>故$C_6^3$。</p>
+</blockquote>
+<p>4、把good写错多少种方法?把error写错多少种方法？</p>
+<blockquote>
+<p>good：$C_4^2 A_2^2 - 1$</p>
+<p>error： $C_5^3 A_2^2 - 1$</p>
+</blockquote>
+<h2 id="6、挡板法"><a href="#6、挡板法" class="headerlink" title="6、挡板法"></a>6、挡板法</h2><p>特点：<strong>相同</strong>的元素<strong>分成n份</strong>，1份至少m个。</p>
+<p>例题：6个相同的苹果，分给3人，每人至少有1个苹果，有几种分法？</p>
+<blockquote>
+<p>将苹果分成3份，需要2个挡板。</p>
+<p><code>1 2 | 3 4 | 5 6</code> </p>
+<p>6个苹果中间有5个位置可以放挡板，故$C_5^2$</p>
+</blockquote>
+<h3 id="习题-4"><a href="#习题-4" class="headerlink" title="习题"></a>习题</h3><p>1、12个苹果分给3个人，每个人<strong>至少3个</strong>，多少种分法?</p>
+<p>2、9个运动员名额分给1班2班3班，要求每个班所得名额不少于自己班级序号，多少种分法?</p>
+<hr>
+<hr>
+<p>解析分割线</p>
+<hr>
+<hr>
+<h3 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h3><p>1、12个苹果分给3个人，每个人至少3个，多少种分法?</p>
+<blockquote>
+<p>三个人分别给<strong>两个</strong>苹果，问题就转换成6个苹果给3人，每人至少1个，$C_5^3$</p>
+</blockquote>
+<p>2、9个运动员名额分给1班2班3班，要求每个班所得名额不少于自己班级序号，多少种分法?</p>
+<blockquote>
+<p>2班给1个名额，3班给2个名额，问题转换成6个名额给3个班，至少1个，$C_5^2$</p>
+</blockquote>
+<hr>
+<p>参考视频</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1a7411N7gy?p=1&vd_source=49e30194f6d5798a1f90d69dad9c0460">1-排列组合计数原理基本定义_哔哩哔哩_bilibili</a></p>
+<p>到</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/419663130">(1 条消息) hexo文章中如何放入图片? - 知乎 (zhihu.com)</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">资源文件夹 | Hexo</a></p>
-</li>
-<li><p><a href="https://link.zhihu.com/?target=https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1a7411N7gy?p=9&vd_source=49e30194f6d5798a1f90d69dad9c0460">9-排列组合之易错易混淆_哔哩哔哩_bilibili</a></p>
 </li>
 </ul>
 
@@ -731,12 +1057,12 @@
         
         <div class="tags">
           
-            <a href="/tags/hexo%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/" class="">
-              hexo本地图片
+            <a href="/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/" class="">
+              排列组合
             </a>
           
-            <a href="/tags/Typora/" class="">
-              Typora
+            <a href="/tags/CSP%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9/" class="">
+              CSP高频考点
             </a>
           
         </div>
@@ -750,7 +1076,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2023/08/12/hexo插入本地图片/" target="_blank" title="hexo文章插入本地图片">https://sleepwal.github.io/2023/08/12/hexo插入本地图片/</a>
+    <a href="/2023/08/31/CSP-J高频考点-排列组合/" target="_blank" title="CSP-J高频考点-排列组合">https://sleepwal.github.io/2023/08/31/CSP-J高频考点-排列组合/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -768,52 +1094,24 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2023/08/12/%E7%AC%AC1%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">第1章 计算机网络概述</div>
-      </div>
-      
-      <!-- <div class="content">
-        引入网络可以干什么？
-
-网络通讯（微信、QQ）
-
-浏览网站（B站）
-
-网络游戏（LOL、王者）
-
-等等
-
-
-一、什么是I
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2023/08/11/2022%E5%B9%B4CSP-J1/" class="post-nav-link">
+    <a href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E9%93%BE%E8%A1%A8%E5%90%88%E9%9B%86/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">2022 CSP-J1题目</div>
+        <div class="title-text">2019-2022年CSP-J1链表合集</div>
       </div>
       <!-- <div class="content">
-        一、单项选择题第1题
-以下哪种功能没有涉及C++语言的面向对象特性支持：（ ）。
-A. C++ 中调用 printf 函
+        2019第 6 题链表不具有的特点是（）
+A. 插入删除不需要移动元素
+B. 不必事先估计存储空间
+C. 所需空间与线性
       </div> -->
     </a>
   </div>
@@ -1034,7 +1332,7 @@ A. C++ 中调用 printf 函
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-text">方法一：安装插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="toc-text">方法二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89"><span class="toc-text">方法三</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="toc-text">基本定义</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%8A%A0%E6%B3%95%E8%AE%A1%E6%95%B0%E5%8E%9F%E7%90%86"><span class="toc-text">分类加法计数原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E4%B9%98%E6%B3%95%E8%AE%A1%E6%95%B0%E5%8E%9F%E7%90%86"><span class="toc-text">分布乘法计数原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%A2%98%E5%9E%8B"><span class="toc-text">常见题型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E7%89%B9%E6%AE%8A%E5%85%83%E7%B4%A0%E4%BC%98%E5%85%88%E5%AE%89%E6%8E%92"><span class="toc-text">1、特殊元素优先安排</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E6%8D%86%E7%BB%91%E6%B3%95"><span class="toc-text">2、捆绑法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-1"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-1"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%8F%92%E7%A9%BA%E6%B3%95"><span class="toc-text">3、插空法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-2"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-2"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E6%AD%A3%E9%9A%BE%E5%88%99%E5%8F%8D%E7%AD%96%E7%95%A5"><span class="toc-text">4、正难则反策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E5%AE%9A%E5%BA%8F%E9%97%AE%E9%A2%98-%E7%9B%B8%E5%90%8C%E5%85%83%E7%B4%A0%E6%8E%92%E5%88%97%E9%97%AE%E9%A2%98"><span class="toc-text">5、定序问题 &amp; 相同元素排列问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-3"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-3"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E6%8C%A1%E6%9D%BF%E6%B3%95"><span class="toc-text">6、挡板法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-4"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-4"><span class="toc-text">解析</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1297,6 +1595,59 @@ A. C++ 中调用 printf 函
 		height: 100%;
 	}
 </style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
 

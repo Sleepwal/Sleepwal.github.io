@@ -630,7 +630,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 5.6k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 5.7k |
           </span>
   
           <span class="min2read">
@@ -661,7 +661,18 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="一、什么是Internet"><a href="#一、什么是Internet" class="headerlink" title="一、什么是Internet ?"></a>一、什么是Internet ?</h1><p>通俗点，就是一堆网络通过网络互联设备（路由器）连在一起。</p>
+        <h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><p>网络可以干什么？</p>
+<ul>
+<li><p>网络通讯（微信、QQ）</p>
+</li>
+<li><p>浏览网站（B站）</p>
+</li>
+<li><p>网络游戏（LOL、王者）</p>
+</li>
+<li><p>等等</p>
+</li>
+</ul>
+<h1 id="一、什么是Internet"><a href="#一、什么是Internet" class="headerlink" title="一、什么是Internet ?"></a>一、什么是Internet ?</h1><p>通俗点，就是一堆网络通过网络互联设备（路由器）连在一起。</p>
 <p>从具体构成角度看：</p>
 <ul>
 <li>节点<ul>
@@ -670,16 +681,12 @@
 </ul>
 </li>
 <li>边：通信链路<ul>
-<li>接入网链路：主机连接到互联网的链 路</li>
+<li>接入网链路：主机连接到互联网的链路</li>
 <li>主干链路：路由器间的链路</li>
 </ul>
 </li>
 <li>协议：控制发送、接收信息<ul>
 <li>如TCP、IP、HTTP、FTP、PPP</li>
-</ul>
-</li>
-<li>Internet：网络的网络<ul>
-<li>松散的层次结构，互连的ISP</li>
 </ul>
 </li>
 </ul>
@@ -702,6 +709,7 @@
 <hr>
 <h1 id="二、什么是协议？"><a href="#二、什么是协议？" class="headerlink" title="二、什么是协议？"></a>二、什么是协议？</h1><p>支撑互联网工作的<strong>标准</strong>。</p>
 <p>协议：对等层实体在通信过程中应该遵守的规则和集合。</p>
+<p>![image-20230830172212388](..&#x2F;images&#x2F;第1章 计算机网络概述&#x2F;image-20230830172212388.png)</p>
 <p>网络协议： </p>
 <ul>
 <li>类似人类协议</li>
@@ -748,7 +756,7 @@
 </ul>
 </li>
 </ul>
-<p>TCP 服务 RFC793</p>
+<p>TCP 服务 </p>
 <ul>
 <li>可靠地、按顺序地传送数据<ul>
 <li>确认和重传</li>
@@ -1799,7 +1807,7 @@ D
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFInternet"><span class="toc-text">一、什么是Internet ?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%8F%E8%AE%AE%EF%BC%9F"><span class="toc-text">二、什么是协议？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E7%9A%84%E4%B8%89%E4%B8%AA%E9%83%A8%E5%88%86"><span class="toc-text">三、网络结构的三个部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BE%B9%E7%BC%98"><span class="toc-text">网络边缘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E7%BD%91%E7%BB%9C%E8%AE%BE%E6%96%BD%E7%9A%84%E9%9D%A2%E5%90%91%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-text">采用网络设施的面向连接服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E7%9A%84%E6%97%A0%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-text">采用基础设施的无连接服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83"><span class="toc-text">网络核心</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-text">电路交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="toc-text">分组交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2-vs-%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-text">分组交换 vs. 电路交换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91%E3%80%81%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="toc-text">接入网、物理媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91"><span class="toc-text">接入网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="toc-text">物理媒体</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Internet-ISP%E7%BB%93%E6%9E%84"><span class="toc-text">四、Internet&#x2F;ISP结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%B1%82-ISP"><span class="toc-text">三层 ISP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ISP%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-text">ISP之间的连接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%80%A7%E8%83%BD"><span class="toc-text">五、性能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%B6%E6%97%B6"><span class="toc-text">延时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%B8%A2%E5%A4%B1"><span class="toc-text">分组丢失</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%9E%E5%90%90%E9%87%8F"><span class="toc-text">吞吐量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%8D%8F%E8%AE%AE%E5%B1%82%E6%AC%A1%E3%80%81%E6%9C%8D%E5%8A%A1%E6%A8%A1%E5%9E%8B"><span class="toc-text">六、协议层次、服务模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E5%B1%82%E6%AC%A1"><span class="toc-text">协议层次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B1%82"><span class="toc-text">分层</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%8E%86%E5%8F%B2"><span class="toc-text">七、历史</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-text">引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFInternet"><span class="toc-text">一、什么是Internet ?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%8F%E8%AE%AE%EF%BC%9F"><span class="toc-text">二、什么是协议？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E7%9A%84%E4%B8%89%E4%B8%AA%E9%83%A8%E5%88%86"><span class="toc-text">三、网络结构的三个部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BE%B9%E7%BC%98"><span class="toc-text">网络边缘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E7%BD%91%E7%BB%9C%E8%AE%BE%E6%96%BD%E7%9A%84%E9%9D%A2%E5%90%91%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-text">采用网络设施的面向连接服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E7%94%A8%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E7%9A%84%E6%97%A0%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-text">采用基础设施的无连接服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83"><span class="toc-text">网络核心</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-text">电路交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="toc-text">分组交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2-vs-%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-text">分组交换 vs. 电路交换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91%E3%80%81%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="toc-text">接入网、物理媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91"><span class="toc-text">接入网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="toc-text">物理媒体</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Internet-ISP%E7%BB%93%E6%9E%84"><span class="toc-text">四、Internet&#x2F;ISP结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%B1%82-ISP"><span class="toc-text">三层 ISP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ISP%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-text">ISP之间的连接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%80%A7%E8%83%BD"><span class="toc-text">五、性能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%B6%E6%97%B6"><span class="toc-text">延时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%B8%A2%E5%A4%B1"><span class="toc-text">分组丢失</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%9E%E5%90%90%E9%87%8F"><span class="toc-text">吞吐量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%8D%8F%E8%AE%AE%E5%B1%82%E6%AC%A1%E3%80%81%E6%9C%8D%E5%8A%A1%E6%A8%A1%E5%9E%8B"><span class="toc-text">六、协议层次、服务模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E5%B1%82%E6%AC%A1"><span class="toc-text">协议层次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B1%82"><span class="toc-text">分层</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%8E%86%E5%8F%B2"><span class="toc-text">七、历史</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1825,6 +1833,27 @@ D
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/08/31/CSP-J%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">08-31</span>
+                
+              </div>
+              <a class="post-title" href="/2023/08/31/CSP-J%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/">CSP-J高频考点-排列组合</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -1907,27 +1936,6 @@ D
                 
               </div>
               <a class="post-title" href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%90%88%E9%9B%86/">2019-2022年CSP-J1二叉树合集</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E5%90%88%E9%9B%86/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-27</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E5%90%88%E9%9B%86/">2019-2022年CSP-J1排列组合合集</a>
             </div>
           </div>
         

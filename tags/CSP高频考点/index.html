@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>hexo文章插入本地图片 | SleepBlog</title>
+  <title>标签: CSP高频考点 | SleepBlog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -585,759 +585,112 @@
 </header>
         <!-- 内容区域 -->
         
- <!-- prismjs 代码高亮 -->
- 
 
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-tagDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
-
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        hexo文章插入本地图片
-      </span>
-    </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2023-08-12 |
-        </span>
-      
-
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/categories/hexo%E9%85%8D%E7%BD%AE/" class="post-detail-header_category">
-              hexo配置
-            </a>
-          
-        </span>
-      
-
-      
-        <div class="post-detail-header_wordcount">
-          <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 418 |
-          </span>
-  
-          <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
-          </span>
-  
-          
-            <span class="reading">
-              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
-            </span>
-          
-        </div>
-      
-    
+<div class="tag-header" style="background-image: url('https://pic1.zhimg.com/80/v2-604a15cef201cf177943af2d915eb2e7_1440w.jpg?source=1940ef5c');">
+  <div class="tag-header-title">
+    tag
   </div>
+  <div class="tag-header-desc">
   
-  
-    <script src="/js/bubble/bubble.js"></script>
-  
-</div>
-
-
-
-
-
-<div class="post-detail-content post-row" 
-  style="padding-top: 0px;">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <h2 id="方法一：安装插件"><a href="#方法一：安装插件" class="headerlink" title="方法一：安装插件"></a>方法一：安装插件</h2><ol>
-<li>在<code>Typora文件</code> –&gt; <code>设置偏好</code> –&gt; <code>图像</code>。在<code>插入图片时</code>选择复制到指定路径&#96;，设置为</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./$&#123;filename&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>安装插件</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>配置文件（可以不配置，Typora复制图片时就会创建目录）<ul>
-<li>在 Hexo 根目录打开配置文件 <code>_config.yml</code></li>
-<li>搜索 <code>post_asset_folder</code>，<code>false</code> 改为 <code>true</code></li>
-<li><code>hexo new page</code> 生成新文章，会在同级目录创建一个同名文件夹。</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>大概是从 <code>Hexo 5</code> 开始<a target="_blank" rel="noopener" href="https://github.com/xcodebuild/hexo-asset-image">hexo-asset-image</a> 已无效。</p>
-</blockquote>
-<hr>
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>官方提供的方式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>通过这种方式，图片将会同时出现在文章和主页以及归档页中。</p>
-<blockquote>
-<p>但是这样不方便，Typora不能显示图片。</p>
-</blockquote>
-<hr>
-<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a> 3.1.0 引入了一个新的选项，其允许你无需使用 <code>asset_img</code> 标签插件就可以在 markdown 中嵌入图片</p>
-<p>如需启用：修改一下配置文件_config.yml</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>然后再配置一下Typora</p>
-<ol>
-<li><p>在Hexo根目录（<code>HexoBlog</code>）的<code>source</code>下新建<code>imags</code>文件夹。</p>
-<blockquote>
-<p>注意<code>imags</code>与<code>_posts</code><strong>同级</strong>。</p>
-</blockquote>
-<p><img src="/../images/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/image-20230813232133245.png" class="lazyload placeholder" data-srcset="/../images/hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/image-20230813232133245.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230813232133245"></p>
-</li>
-<li><p>在Typora<code>文件</code> –&gt; <code>设置偏好</code> –&gt; <code>图像</code>。在<code>插入图片时</code>选择<code>复制到指定路径</code>，设置为</p>
-</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../../source/images//$&#123;filename&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>在<code>格式</code> –&gt; <code>图像</code> –&gt; <code>设置图片根目录</code>将<code>HexoBlog/source</code>设置为<strong>根目录</strong>。（本人测试不设置根目录也行，根据自己情况来设置）</li>
-</ol>
-<hr>
-<p>参考文章</p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://moeci.com/posts/hexo-typora/">Hexo + Typora + 开发Hexo插件 解决图片路径不一致 | yiyun’s Blog (moeci.com)</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/419663130">(1 条消息) hexo文章中如何放入图片? - 知乎 (zhihu.com)</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">资源文件夹 | Hexo</a></p>
-</li>
-<li><p><a href="https://link.zhihu.com/?target=https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a></p>
-</li>
-</ul>
-
-      </div>
-      <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/tags/hexo%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/" class="">
-              hexo本地图片
-            </a>
-          
-            <a href="/tags/Typora/" class="">
-              Typora
-            </a>
-          
-        </div>
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>作者:  </strong>SleepWalker</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>文章链接:  </strong>
-    <a href="/2023/08/12/hexo插入本地图片/" target="_blank" title="hexo文章插入本地图片">https://sleepwal.github.io/2023/08/12/hexo插入本地图片/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明:   </strong>
-      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      许可协议。转载请注明出处!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2023/08/12/%E7%AC%AC1%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">第1章 计算机网络概述</div>
-      </div>
-      
-      <!-- <div class="content">
-        引入网络可以干什么？
-
-网络通讯（微信、QQ）
-
-浏览网站（B站）
-
-网络游戏（LOL、王者）
-
-等等
-
-
-一、什么是I
-      </div> -->
-    </a>
-  </div>
-
-
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
-    </div>
-    <a href="/2023/08/11/2022%E5%B9%B4CSP-J1/" class="post-nav-link">
-      <div class="title">
-        下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">2022 CSP-J1题目</div>
-      </div>
-      <!-- <div class="content">
-        一、单项选择题第1题
-以下哪种功能没有涉及C++语言的面向对象特性支持：（ ）。
-A. C++ 中调用 printf 函
-      </div> -->
-    </a>
-  </div>
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
-  <div id="donate_board" class="donate_bar center" ref="donate">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
-  </div>
-  <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-show="visible"
-      @click="cancelDialogDrawer()"
-    >
-    </div>
-  </transition>
-  <transition name="bounce">
-    <div class="donate-box" v-cloak v-show="visible">
-      <div class="donate-box_close">
-        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
-      </div>
-      <div class="donate-box_title">
-        <h4>
-          你的赏识是我前进的动力
-        </h4>
-      </div>
-      <div class="donate-box_tab">
-        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
-          支付宝
-        </div>
-        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
-          微信
-        </div>
-      </div>
-      <div class="donate-box_img">
-        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/" class="lazyload placeholder" data-srcset="/" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
-        </div> 
-        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/" class="lazyload placeholder" data-srcset="/" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
-        </div>
-      </div>
-    </div>
-  </transition>
-</div>
-
-<script>
-  var body = document.body || document.documentElement || window;
-  var vm = new Vue({
-    el: '#appDonate',
-    data: {
-      visible: false,
-      tabActive: 'Alipay',
-      top: 0,
-    },
-    computed: {
-    },
-    mounted() {
-    },
-    methods: {
-      showDialogDrawer() {
-        this.visible = true;
-        // 防止页面滚动，只能让弹框滚动
-        // function getScroll() {
-        //   return {
-        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        //   };
-        // }
-        this.top = $(document).scrollTop() // or getScroll().top
-        // console.log('aa', $('.main-content'));
-        body.style.cssText = 'overflow: hidden;';
-      },
-      cancelDialogDrawer() {
-        this.visible = false;
-        body.removeAttribute('style');
-        $(document).scrollTop(this.top)
-      },
-      changeTabActive(name) {
-        this.tabActive = name;
-      }
-    },
-    created() {}
-  })
-</script>
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script src="/js/shareJs/social-share.min.js"></script>
-</script>
-
-<style>
-  .social-share {
-    margin: 20px 0;
+    <span class="title" id="tag-header-desc"></span>
+    <script>
+  function typedFn() {
+    const el = '#tag-header-desc';
+    const type = 'tagDetail';
+    let desc = '每一缪误都是从结论到根据的推论。'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
   }
-</style>
-
-
-    
-    
-    <!-- 评论 -->
-    <!-- 评论 -->
-
-  <div id="myComment">
-    
-      <div id="gitment-container"></div>
-
+  typedFn();
+</script>
     
   </div>
+  <div class="mask-box"></div>
+</div>
 
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
 
 
+<div class="tag">
+  <div class="tag-name">
+    <div class="name" style="background-color: #F9EBEA;">CSP高频考点 分类</div>
   </div>
+  <!-- 每一篇文章卡片 -->
+  <!-- hash算法 -->
 
-  <!-- 目录 -->
-  <aside id='l_side'>
+<section class="posts">
   
     
-      <section class="widget side_blogger">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img src='https://pic2.zhimg.com/80/v2-42b72d5ebee4b8d8aa70d9687effe87b_1440w.webp'/>
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span class="post-time">2023-08-31</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2023/08/31/CSP-J%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/">CSP-J高频考点-排列组合</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSP%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9/" rel="tag">CSP高频考点</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/" rel="tag">排列组合</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/">排列组合</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="/2023/08/31/CSP-J%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/" style="background-size: cover; 
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+            </a>
+          </div>
+          <div class="post-content">
+            基本定义排列组合考的是逻辑思维
+分类加法计数原理分布乘法计数原理常见题型1、特殊元素优先安排例1：六个人从左至右排成一行，最左端只能排甲或乙，最右端不能排甲，有多少种排法?
+
+特殊元素使最左端和最右端，那么先选最左端，再选最右端，最后选其余
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2023/08/31/CSP-J%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/">
+            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/2023/08/31/CSP-J%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
         </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>SleepWalker</h2>
-        
-        
-          <p>Sleep</p>
-
-        
-        
-          <p><span id="jinrishici-sentence">SleepBlog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
       </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://sleepwal.github.io/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=你的qq号码"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
+    </article>
+  
 </section>
-
-    
-  
-  
-  
-
-  <div class="layout_sticky">    
-    
-      
-<section class="widget side_toc">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="toc-main">
-      <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-text">方法一：安装插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="toc-text">方法二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89"><span class="toc-text">方法三</span></a></li></ol> -->
-        <div class="toc"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 手机端目录按钮 -->
-<div id="toc-mobile-btn">
-  <i class="fas fa-list-ul" aria-hidden="true"></i>
 </div>
 
-      
-  <section class="widget side_recent_post">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      
-      <!-- hash算法 -->
-      
-      <div class="aside-list">
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/31/CSP-J%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-31</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/31/CSP-J%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9-%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/">CSP-J高频考点-排列组合</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E9%93%BE%E8%A1%A8%E5%90%88%E9%9B%86/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-27</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E9%93%BE%E8%A1%A8%E5%90%88%E9%9B%86/">2019-2022年CSP-J1链表合集</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E5%9B%BE%E5%90%88%E9%9B%86/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-27</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E5%9B%BE%E5%90%88%E9%9B%86/">2019-2022年CSP-J1图合集</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E6%A0%88%E5%90%88%E9%9B%86/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-27</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E6%A0%88%E5%90%88%E9%9B%86/">2019-2022年CSP-J1栈合集</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%90%88%E9%9B%86/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-27</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%90%88%E9%9B%86/">2019-2022年CSP-J1二叉树合集</a>
-            </div>
-          </div>
-        
-      </div>
-    </div>
-  </section>
-
-    
-  </div>
-</aside>
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
-</div>
-
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = '' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
-</script>
-
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
-
-
-
-  <script>
-  // 判断是否存在mermaid元素
-  function loadMermaid() {
-    if (document.getElementsByClassName('mermaid').length) {
-      // 判断是否有mermaid.init()方法
-      if (window.mermaidJsLoad) mermaid.init()
-      // 判断是否有loadScript方法
-      else {
-        // 加载script标签
-        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
-          // 判断是否有mermaid.init()方法
-          window.mermaidJsLoad = true
-          // 初始化mermaid
-          mermaid.initialize({
-            theme: 'default',
-          })
-          // 判断是否有pjax.on属性
-          if ('true') {
-            // 初始化mermaid
-            mermaid.init();
-          }
-        })
-      }
-    }
-  };
-  // 当DOMContentLoaded事件触发时，执行loadMermaid函数
-  document.addEventListener("DOMContentLoaded", function () {
-    loadMermaid();
-  })
-
-  // 当pjax:complete事件触发时，执行loadMermaid函数
-  document.addEventListener('pjax:complete', function () {
-    loadMermaid();
-  })
+<div class="w-70">
   
-</script>
-
+</div>
 
       </main>
     </div>
