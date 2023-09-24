@@ -630,7 +630,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 3.7k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 3.8k |
           </span>
   
           <span class="min2read">
@@ -661,8 +661,32 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h1><p>排列组合考的是逻辑思维</p>
-<h2 id="分类加法计数原理"><a href="#分类加法计数原理" class="headerlink" title="分类加法计数原理"></a>分类加法计数原理</h2><h2 id="分布乘法计数原理"><a href="#分布乘法计数原理" class="headerlink" title="分布乘法计数原理"></a>分布乘法计数原理</h2><h1 id="常见题型"><a href="#常见题型" class="headerlink" title="常见题型"></a>常见题型</h1><h2 id="一、特殊元素优先安排"><a href="#一、特殊元素优先安排" class="headerlink" title="一、特殊元素优先安排"></a>一、特殊元素优先安排</h2><p>例1：六个人从左至右排成一行，最左端只能排甲或乙，最右端不能排甲，有多少种排法?</p>
+        <h1 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h1><p>排列组合考的不是计算，而是逻辑思维。</p>
+<h2 id="分类加法计数原理"><a href="#分类加法计数原理" class="headerlink" title="分类加法计数原理"></a>分类加法计数原理</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">	A --&gt;|3趟飞机航班| B</span><br><span class="line">	A --&gt;|4列火车| B</span><br><span class="line">	A --&gt;|2艘船| B</span><br></pre></td></tr></table></figure>
+
+<p>从A地到B地一共有 <code>3 + 4 + 2 = 9</code>种方案。</p>
+<h2 id="分步乘法计数原理"><a href="#分步乘法计数原理" class="headerlink" title="分步乘法计数原理"></a>分步乘法计数原理</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">	A --&gt;|a| B</span><br><span class="line">	A --&gt;|b| B</span><br><span class="line">	B --&gt;|c| C</span><br><span class="line">	B --&gt;|d| C</span><br><span class="line">	B --&gt;|e| C</span><br></pre></td></tr></table></figure>
+
+<p>从A地到C地，需要先经过B地。</p>
+<ul>
+<li>A地到B地有2种方法</li>
+<li>B地到C地有3种方法</li>
+</ul>
+<p>共有<code>2 * 3 = 6</code>种方法。该题分步来进行，第一步从A地到B地，第二步从B地到C地，每一步的方案数相乘。</p>
+<p>可以逐个枚举试一下</p>
+<ol>
+<li><p>A地到B地经过路径a</p>
+<ul>
+<li>ac、ad、ae</li>
+</ul>
+</li>
+<li><p>A地到B地经过路径b</p>
+<ul>
+<li>bc、bd、be</li>
+</ul>
+</li>
+</ol>
+<h1 id="常见题型"><a href="#常见题型" class="headerlink" title="常见题型"></a>常见题型</h1><h2 id="一、特殊元素优先安排"><a href="#一、特殊元素优先安排" class="headerlink" title="一、特殊元素优先安排"></a>一、特殊元素优先安排</h2><p>例1：六个人从左至右排成一行，最左端只能排甲或乙，最右端不能排甲，有多少种排法?</p>
 <blockquote>
 <p>特殊元素使<strong>最左端</strong>和<strong>最右端</strong>，那么先选最左端，再选最右端，最后选其余4个位置。（先右后左也行）</p>
 <ol>
@@ -940,7 +964,8 @@
 <li>6空隙插空：插入两个元素：两个空车位、一个空车位，此时这两个元素不一样，$A_6^2$</li>
 </ol>
 </blockquote>
-<h2 id="四、正难则反策略"><a href="#四、正难则反策略" class="headerlink" title="四、正难则反策略"></a>四、正难则反策略</h2><h2 id="五、定序问题-相同元素排列问题"><a href="#五、定序问题-相同元素排列问题" class="headerlink" title="五、定序问题 &amp; 相同元素排列问题"></a>五、定序问题 &amp; 相同元素排列问题</h2><ul>
+<hr>
+<h2 id="四、定序问题-相同元素排列问题"><a href="#四、定序问题-相同元素排列问题" class="headerlink" title="四、定序问题 &amp; 相同元素排列问题"></a>四、定序问题 &amp; 相同元素排列问题</h2><ul>
 <li>定序问题：部分元素<strong>顺序已经定好</strong>，<strong>只选不排</strong>。</li>
 <li>相同元素排列问题：部分元素<strong>相同</strong>，没有顺序，<strong>只选不排</strong>。</li>
 </ul>
@@ -1020,7 +1045,7 @@
 <p>good：$C_4^2 A_2^2 - 1$</p>
 <p>error： $C_5^3 A_2^2 - 1$</p>
 </blockquote>
-<h2 id="六、挡板法"><a href="#六、挡板法" class="headerlink" title="六、挡板法"></a>六、挡板法</h2><p>特点：<strong>相同</strong>的元素<strong>分成n份</strong>，1份至少m个。</p>
+<h2 id="五、挡板法"><a href="#五、挡板法" class="headerlink" title="五、挡板法"></a>五、挡板法</h2><p>特点：<strong>相同</strong>的元素<strong>分成n份</strong>，1份至少m个。</p>
 <p>例题：6个相同的苹果，分给3人，每人至少有1个苹果，有几种分法？</p>
 <blockquote>
 <p>将苹果分成3份，需要2个挡板。</p>
@@ -1042,7 +1067,7 @@
 <blockquote>
 <p>2班给1个名额，3班给2个名额，问题转换成6个名额给3个班，至少1个，$C_5^2$</p>
 </blockquote>
-<h2 id="七、分组问题"><a href="#七、分组问题" class="headerlink" title="七、分组问题"></a>七、分组问题</h2><p>特点：多个元素分成n组。</p>
+<h2 id="六、分组问题"><a href="#六、分组问题" class="headerlink" title="六、分组问题"></a>六、分组问题</h2><p>特点：多个元素分成n组。</p>
 <p>平均分组：出现m个组元素个数一样，除以$A_m^m$。</p>
 <p>例题1：6本书，分成3组，第一组1本书，第二组2本书，第三组3本书，有几种分法？</p>
 <blockquote>
@@ -1221,6 +1246,27 @@
 <div class="post-nav">
 
 
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-7cfc909ebe8d83683909846edd6b5232_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-7cfc909ebe8d83683909846edd6b5232_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/2023/09/06/2017NOIP%E6%99%AE%E5%8F%8A%E7%BB%84%E5%88%9D%E8%B5%9B%E7%9C%9F%E9%A2%98/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">2017NOIP普及组初赛真题</div>
+      </div>
+      
+      <!-- <div class="content">
+        一、单项选择题1.在8位二进制补码中，10101011表示的数是十进制下的（ ）
+A．43 
+B. -85 
+C. -4
+      </div> -->
+    </a>
+  </div>
 
 
 
@@ -1460,7 +1506,7 @@ C. 所需空间与线性
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="toc-text">基本定义</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%8A%A0%E6%B3%95%E8%AE%A1%E6%95%B0%E5%8E%9F%E7%90%86"><span class="toc-text">分类加法计数原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E4%B9%98%E6%B3%95%E8%AE%A1%E6%95%B0%E5%8E%9F%E7%90%86"><span class="toc-text">分布乘法计数原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%A2%98%E5%9E%8B"><span class="toc-text">常见题型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%89%B9%E6%AE%8A%E5%85%83%E7%B4%A0%E4%BC%98%E5%85%88%E5%AE%89%E6%8E%92"><span class="toc-text">一、特殊元素优先安排</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8D%86%E7%BB%91%E6%B3%95"><span class="toc-text">二、捆绑法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-1"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-1"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%8F%92%E7%A9%BA%E6%B3%95"><span class="toc-text">三、插空法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-2"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-2"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%AD%A3%E9%9A%BE%E5%88%99%E5%8F%8D%E7%AD%96%E7%95%A5"><span class="toc-text">四、正难则反策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%AE%9A%E5%BA%8F%E9%97%AE%E9%A2%98-%E7%9B%B8%E5%90%8C%E5%85%83%E7%B4%A0%E6%8E%92%E5%88%97%E9%97%AE%E9%A2%98"><span class="toc-text">五、定序问题 &amp; 相同元素排列问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-3"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-3"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%8C%A1%E6%9D%BF%E6%B3%95"><span class="toc-text">六、挡板法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-4"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-4"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%88%86%E7%BB%84%E9%97%AE%E9%A2%98"><span class="toc-text">七、分组问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-5"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-5"><span class="toc-text">解析</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="toc-text">基本定义</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%8A%A0%E6%B3%95%E8%AE%A1%E6%95%B0%E5%8E%9F%E7%90%86"><span class="toc-text">分类加法计数原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%AD%A5%E4%B9%98%E6%B3%95%E8%AE%A1%E6%95%B0%E5%8E%9F%E7%90%86"><span class="toc-text">分步乘法计数原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%A2%98%E5%9E%8B"><span class="toc-text">常见题型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%89%B9%E6%AE%8A%E5%85%83%E7%B4%A0%E4%BC%98%E5%85%88%E5%AE%89%E6%8E%92"><span class="toc-text">一、特殊元素优先安排</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8D%86%E7%BB%91%E6%B3%95"><span class="toc-text">二、捆绑法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-1"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-1"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%8F%92%E7%A9%BA%E6%B3%95"><span class="toc-text">三、插空法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-2"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-2"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9A%E5%BA%8F%E9%97%AE%E9%A2%98-%E7%9B%B8%E5%90%8C%E5%85%83%E7%B4%A0%E6%8E%92%E5%88%97%E9%97%AE%E9%A2%98"><span class="toc-text">四、定序问题 &amp; 相同元素排列问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-3"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-3"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%8C%A1%E6%9D%BF%E6%B3%95"><span class="toc-text">五、挡板法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-4"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-4"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%88%86%E7%BB%84%E9%97%AE%E9%A2%98"><span class="toc-text">六、分组问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98-5"><span class="toc-text">习题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-5"><span class="toc-text">解析</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1486,6 +1532,48 @@ C. 所需空间与线性
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/09/23/2023%E5%B9%B4CSP%E5%85%A5-J1%E7%9C%9F%E9%A2%98/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">09-23</span>
+                
+              </div>
+              <a class="post-title" href="/2023/09/23/2023%E5%B9%B4CSP%E5%85%A5-J1%E7%9C%9F%E9%A2%98/">2023 CSP-J1真题</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2023/09/06/2017NOIP%E6%99%AE%E5%8F%8A%E7%BB%84%E5%88%9D%E8%B5%9B%E7%9C%9F%E9%A2%98/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-7cfc909ebe8d83683909846edd6b5232_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-7cfc909ebe8d83683909846edd6b5232_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">09-06</span>
+                
+              </div>
+              <a class="post-title" href="/2023/09/06/2017NOIP%E6%99%AE%E5%8F%8A%E7%BB%84%E5%88%9D%E8%B5%9B%E7%9C%9F%E9%A2%98/">2017NOIP普及组初赛真题</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -1547,48 +1635,6 @@ C. 所需空间与线性
                 
               </div>
               <a class="post-title" href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E5%9B%BE%E5%90%88%E9%9B%86/">2019-2022年CSP-J1图合集</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E6%A0%88%E5%90%88%E9%9B%86/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-27</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E6%A0%88%E5%90%88%E9%9B%86/">2019-2022年CSP-J1栈合集</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%90%88%E9%9B%86/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">08-27</span>
-                
-              </div>
-              <a class="post-title" href="/2023/08/27/2019-2022%E5%B9%B4CSP-J1%E4%BA%8C%E5%8F%89%E6%A0%91%E5%90%88%E9%9B%86/">2019-2022年CSP-J1二叉树合集</a>
             </div>
           </div>
         
