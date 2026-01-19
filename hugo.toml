@@ -2,15 +2,3 @@ baseURL = 'https://sleepwal.github.io/'
 languageCode = 'zh-cn'
 title = 'SleepWalker Blog'
 theme = ["PaperMod"]
-
-[params]
-  defaultTheme = "auto"
-  # 这里 homeInfoParams 下注意不要换行，否则 hugo server可能打开不了（复制时候删除这行注释）
-  homeInfoParams = {
-    Title = "你好，我是 SleepWalker ", Content = "欢迎来到我的博客主页：个人 "
-  }
-
-[[menu.main]]
-  name = "个人"
-  url = "/posts"
-  weight = 1

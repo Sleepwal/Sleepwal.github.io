@@ -1,6 +1,6 @@
 +++
 date = '2026-01-19T21:54:39+08:00'
-draft = true
+draft = false
 title = '为智能体构建不遗忘的记忆：SimpleMem如何重塑LLM的长时交互能力'
 +++
 

@@ -11,6 +11,8 @@ git checkout -b gh-pages
 
 # 提交构建结果并推送到 gh-pages 分支
 git add .
-git commit -m "手动部署 Hugo 页面"
+git commit -m "更新文章"
+git push origin gh-pages
+
 git push -f origin gh-pages
 ```
