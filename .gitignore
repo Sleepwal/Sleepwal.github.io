@@ -32,6 +32,9 @@ $RECYCLE.BIN/
 *~
 
 # 编辑器和IDE配置
+# Trae IDE
+.trae/
+
 # VS Code
 .vscode/
 *.code-workspace
