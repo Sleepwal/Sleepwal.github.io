@@ -1,0 +1,27 @@
+{{ $src := .Get "src" }}
+{{ $width := .Get "width" | default "100%" }}
+{{ $height := .Get "height" | default "800px" }}
+
+<div class="pdf-container">
+    <object 
+        data="{{ $src }}" 
+        type="application/pdf" 
+        width="{{ $width }}" 
+        height="{{ $height }}">
+        <param name="view" value="fitH">
+        <p>
+            您的浏览器不支持PDF预览，请
+            <a href="{{ $src }}" download>点击下载PDF文件</a>
+        </p>
+    </object>
+</div>
+
+<style>
+.pdf-container {
+    margin: 1rem 0;
+}
+.pdf-container object {
+    border: 1px solid var(--card-border, #e0e0e0);
+    border-radius: 8px;
+}
+</style>
