@@ -1,0 +1,8 @@
+baseURL = 'https://sleepwal.github.io/'
+languageCode = 'en-us'
+title = 'SleepWalker Blog'
+theme = 'hugo-theme-stack'
+
+[params.sidebar]
+  emoji = "🚀" # 你的个性表情
+  subtitle = "代码与咖啡，还有诗和远方" # 你的副标题
