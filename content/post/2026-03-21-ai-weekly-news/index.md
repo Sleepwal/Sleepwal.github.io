@@ -4,10 +4,10 @@ date = "2026-03-21T20:00:00+08:00"
 title = "AI 周报：五大重磅新闻速览"
 description = "小米发布万亿参数MiMo模型、MiniMax首发自我进化路径、云厂商算力涨价、Qwen3.5登顶中国第一、ICML撤稿497篇论文"
 slug = "ai-weekly-news-20260321"
-authors = \[]
-tags = \["AI", "大模型", "科技资讯", "周报"]
-categories = \["AI 观察"]
-series = \["AI 周报"]
+authors = []
+tags = ["AI", "大模型", "科技资讯", "周报"]
+categories = ["AI 观察"]
+series = ["AI 周报"]
 +++
 
 # 今日AI重磅资讯：五大事件搅动科技格局
