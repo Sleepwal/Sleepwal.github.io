@@ -1,6 +1,6 @@
 baseURL = 'https://sleepwal.github.io/'
 title = 'SleepWalker Blog'
-theme = 'hugo-theme-editorial'
+theme = ['github.com/Sleepwal/hugo-theme-editorial']
 languageCode = 'zh-CN'
 
 [params]
