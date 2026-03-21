@@ -8,9 +8,6 @@
 # 临时文件
 *.tmp
 *.temp
-*.swp
-*.swo
-*~
 
 # 日志文件
 *.log
@@ -29,7 +26,7 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Linux
-*~
+# (Linux 系统通常不需要特殊的忽略规则)
 
 # 编辑器和IDE配置
 # Trae IDE
