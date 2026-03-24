@@ -1,3 +1,6 @@
 [submodule "themes/hugo-theme-editorial"]
 	path = themes/hugo-theme-editorial
 	url = git@github.com:Sleepwal/hugo-theme-editorial.git
+[submodule "themes/hugo-theme-retrofuture"]
+	path = themes/hugo-theme-retrofuture
+	url = git@github.com:Sleepwal/hugo-theme-retrofuture.git
