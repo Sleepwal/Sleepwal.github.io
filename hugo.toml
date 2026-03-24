@@ -1,8 +1,8 @@
 baseURL = 'https://sleepwal.github.io/'
 title = 'SleepWalker Blog'
-# theme = ['github.com/Sleepwal/hugo-theme-editorial']
+theme = ['github.com/Sleepwal/hugo-theme-editorial']
 # theme = 'hugo-theme-editorial'  # 使用本地 themes/ 目录
-theme = 'hugo-theme-retrofuture'  # 使用本地 themes/ 目录
+# theme = 'hugo-theme-retrofuture'  # 使用本地 themes/ 目录
 languageCode = 'zh-CN'
 
 [params]
